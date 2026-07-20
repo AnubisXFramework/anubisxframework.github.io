@@ -1,6 +1,13 @@
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://anubisxframework.github.io/sitemap.xml
 
+# Crawl-delay
+Crawl-delay: 10
+
+# Host
 Host: https://anubisxframework.github.io
+
+# Disallow specific paths (none currently)

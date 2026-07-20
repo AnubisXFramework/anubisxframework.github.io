@@ -2,13 +2,16 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>404 — AnubisX</title>
+<title>404 — Page Not Found — AnubisX Framework</title>
+<meta name='description' content='Page not found. The requested page does not exist on the AnubisX Framework website.'>
 <link rel='stylesheet' href='css/design-system.css'><link rel='stylesheet' href='css/style.css'>
+<meta name='robots' content='noindex, follow'>
+<meta name='application-name' content='AnubisX Framework'><meta name='msapplication-TileColor' content='#0a0a0a'><meta name='theme-color' content='#0a0a0a'>
 <style>body{min-height:100vh;display:flex;align-items:center;justify-content:center}.error{max-width:400px;text-align:center}</style>
 </head>
 <body>
 <header class='site-header'>
-<nav class='container flex-between py-md'>
+<nav class='container flex-between py-md' aria-label='Main navigation' role='navigation'>
 <a href='/' class='logo flex-center gap-2'><img src='img/logo1.png' alt='AnubisX Framework' width='40' height='40'></a>
 <ul class='nav-menu flex gap-4'>
 <li><a href='/framework/'>Framework</a></li>
@@ -28,7 +31,7 @@
 <p class='mb-lg'>The page you seek does not exist in this behavioral space.</p>
 <a href='/' class='btn btn-primary'>Return to Framework</a>
 </div>
-<footer class="site-footer py-xl">
+<footer class="site-footer py-xl" role="contentinfo">
   <div class="container">
     <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem">
       <div>

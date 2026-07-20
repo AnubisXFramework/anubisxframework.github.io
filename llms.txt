@@ -1,0 +1,56 @@
+# AnubisX Framework — A Formal Framework for Behavioral Digital Attribution
+
+## About
+AnubisX is an original research framework that formalizes the problem of attributing digital artifacts to their human source through behavioral evidence. It provides a unified theoretical foundation, mathematical formalism, algorithmic catalog, and open-source prototype.
+
+## Author
+Ahmed Awad (NullC0d3) — Independent Researcher, Behavioral Digital Attribution
+ORCID: https://orcid.org/0009-0005-0654-3393
+Email: anubisxframework@gmail.com
+
+## Key Facts
+- Version: 3.0.0 (July 2026)
+- 16 axioms in 6 groups
+- 292 mathematical objects across 24 categories
+- 37 algorithms across 5 behavioral modalities
+- 6-layer architecture
+- 31 validation criteria across 4 tiers
+- License: CC BY 4.0
+- DOI: 10.5281/zenodo.21393392
+
+## Core Pages
+- Homepage: https://anubisxframework.github.io/
+- Framework Overview: https://anubisxframework.github.io/framework/
+- Scientific Theory: https://anubisxframework.github.io/theory/
+- Mathematical Foundations: https://anubisxframework.github.io/mathematics/
+- Algorithm Catalog: https://anubisxframework.github.io/algorithms/
+- Framework Architecture: https://anubisxframework.github.io/architecture/
+- Validation Infrastructure: https://anubisxframework.github.io/validation/
+- Experimental Evidence: https://anubisxframework.github.io/evidence/
+- Research Publications: https://anubisxframework.github.io/publications/
+- Documentation: https://anubisxframework.github.io/documentation/
+- Downloads: https://anubisxframework.github.io/downloads/
+- How to Cite: https://anubisxframework.github.io/citation/
+- About the Author: https://anubisxframework.github.io/author/
+- About the Project: https://anubisxframework.github.io/about/
+- FAQ: https://anubisxframework.github.io/faq/
+- Research Roadmap: https://anubisxframework.github.io/roadmap/
+- Contact: https://anubisxframework.github.io/contact/
+
+## Behavioral Modalities
+1. Stylometric — Vocabulary, syntax, discourse patterns (VALIDATED)
+2. Chrono-Profiling — Circadian rhythms, temporal activity patterns (FUTURE)
+3. Terminal Profiling — Command sequences, navigation patterns (FUTURE)
+4. Network Analysis — Graph topology, community structure (FUTURE)
+5. Media Forensics — File structure, metadata, naming conventions (FUTURE)
+
+## Core Concepts
+- Cognitive Centroid: Behavioral identity as an asymptotic attractor in high-dimensional feature space
+- Behavioral Signal Model: y(s,t,c,p) = y_cog(s,t) + y_ctx(c) + y_plat(p) + ε(s,t,c,p)
+- Likelihood Ratio Evidence Framework for attribution under uncertainty
+
+## Cite As
+Awad, A. (2026). AnubisX: A Formal Framework for Behavioral Digital Attribution (Version 3.0.0) [Computer software]. https://doi.org/10.5281/zenodo.21393392
+
+## Optional
+For the full authoritative content, see llms-full.txt

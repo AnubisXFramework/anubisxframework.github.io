@@ -1,16 +1,26 @@
 {
-  "name": "AnubisX Framework",
+  "name": "AnubisX Framework — A Formal Framework for Behavioral Digital Attribution",
   "short_name": "AnubisX",
-  "description": "A Formal Framework for Behavioral Digital Attribution",
+  "description": "A Formal Framework for Behavioral Digital Attribution. Research framework for behavioral digital attribution, stylometric analysis, and identity intelligence.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
-  "theme_color": "#1a1a2e",
+  "theme_color": "#0a0a0a",
+  "categories": ["research", "science", "cybersecurity", "academic"],
+  "lang": "en-US",
+  "orientation": "any",
   "icons": [
     {
       "src": "/img/logo.svg",
       "sizes": "40x40",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/logo1.png",
+      "sizes": "40x40",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

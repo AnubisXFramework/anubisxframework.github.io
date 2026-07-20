@@ -1,0 +1,113 @@
+# AnubisX Framework — Complete Reference
+
+## Project Overview
+
+AnubisX is an original research framework that formalizes the problem of attributing digital artifacts to their human source through a unified theoretical foundation, mathematical formalism, algorithmic catalog, and open-source prototype. The framework addresses the problem of determining the human source of digital actions and communications when technical identifiers (IP addresses, device fingerprints, account credentials) are unavailable, unreliable, or intentionally obscured.
+
+Current attribution methods depend on technical identifiers that sophisticated adversaries can spoof, eliminate, or obscure. AnubisX approaches attribution through behavioral signals: patterns in how individuals write, communicate, interact with systems, and generate digital artifacts that are difficult to consciously control. The framework is modality-agnostic, platform-independent, and grounded in formal reasoning under uncertainty.
+
+## Author
+
+**Ahmed Awad (NullC0d3)** — Independent security researcher, OSINT practitioner, and author of the AnubisX Framework.
+
+- ORCID: https://orcid.org/0009-0005-0654-3393
+- GitHub: https://github.com/AnubisXFramework
+- Email: anubisxframework@gmail.com
+- Research focus: Behavioral digital attribution, formal methods for attribution under uncertainty, stylometric analysis, multi-modal behavioral profiling
+
+The AnubisX framework is the work of an independent researcher and is not affiliated with any academic institution, government agency, or commercial entity.
+
+## Framework Components
+
+### 1. Axiomatic Foundation (16 axioms)
+Six groups of axioms governing attribution reasoning: existence, distinctness, stability, observability, comparability, and accountability. Core axioms include Uncertainty Conservation, Measurement Prerequisite, Evidential Boundedness, and Attribution Reflexivity.
+
+### 2. Cognitive Centroid Theory
+A formal model of behavioral identity as an asymptotic attractor in high-dimensional feature space. The Cognitive Centroid represents the idealized behavioral signature of an individual, toward which empirical observations converge over time and across contexts.
+
+### 3. Mathematical Framework (292 objects, 24 categories)
+Six hierarchical layers: Foundation Types (L1), Structured Types (L2), Transformations (L3), Comparison & Evaluation (L4), Uncertainty & Decision (L5), Constraint & Optimization (L6). Includes vector spaces, probability distributions, information-theoretic measures, graph-theoretic constructs, and decision-theoretic criteria.
+
+### 4. Algorithm Catalog (37 algorithms, 5 modalities, 9 domains)
+Implementable procedures for feature extraction (ALG-001-004), behavioral processing (ALG-005-008), identity determination (ALG-009-012), similarity computation (ALG-013-016), evidence evaluation (ALG-017-020), confidence assessment (ALG-021-024), decision fusion (ALG-025-028), validation (ALG-029-033), and utility (ALG-034-037). 33 established, 2 proposed, 2 TBD.
+
+### 5. Six-Layer Architecture
+Data Acquisition (L1), Data Normalization (L2), Feature Computation (L3), Profile Construction (L4), Comparison & Matching (L5), Evidence & Decision (L6). Each layer encapsulates a distinct phase with well-defined interfaces.
+
+### 6. Validation Infrastructure (31 criteria, 4 tiers)
+Tier I — Foundation (6 criteria, 100% pass on formal consistency checks)
+Tier II — Implementation (8 criteria, variance reduction ≥ 30%, d' ≥ 1.50)
+Tier III — Empirical (10 criteria, AUC ≥ 0.95, EER ≤ 0.08, Rank-1 ≥ 0.90)
+Tier IV — Operational (7 criteria, FAR drift < 0.1%/month, throughput ≥ 100/s)
+
+## Behavioral Modalities
+
+| Modality | Signal | Algorithms | Status |
+|---|---|---|---|
+| Stylometric | Vocabulary, syntax, discourse patterns | ALG-001-004 | VALIDATED |
+| Chrono-Profiling | Circadian rhythms, temporal patterns | ALG-005-008 | FUTURE |
+| Terminal Profiling | Command sequences, navigation | ALG-009-012 | FUTURE |
+| Network Analysis | Graph topology, community structure | ALG-013-016 | FUTURE |
+| Media Forensics | File structure, metadata | ALG-017-020 | FUTURE |
+
+## Experimental Evidence
+
+Proof-of-concept validation on 31 Egyptian Twitter accounts (EXP-001 through EXP-015):
+- EXP-001: 31/31 accounts produce 372-dim fingerprints (100%)
+- EXP-002: Cross-user similarity μ=0.697, σ=0.105, N=465 pairs
+- EXP-006: FAISS search latency 6-8 µs per query
+- EXP-015: 144 keywords, 58 slang expressions, 12 locations verified
+
+## Scientific Status (v3.0.0)
+- Axiomatic Foundation: PROPOSED
+- Cognitive Centroid Theory: PROPOSED
+- Mathematical Framework: ESTABLISHED
+- Algorithm Catalog: 33 ESTABLISHED, 2 PROPOSED, 2 TBD
+- Six-Layer Architecture: SPECIFIED
+- Stylometric Prototype: IMPLEMENTED
+- Experimental Validation: COMPLETED (proof-of-concept)
+- Full Validation Suite: PRE-SPECIFIED
+
+## Citation
+
+### APA
+Awad, A. (2026). AnubisX: A Formal Framework for Behavioral Digital Attribution (Version 3.0.0) [Computer software]. https://doi.org/10.5281/zenodo.21393392
+
+### BibTeX
+@software{awad2026anubisx,
+  author       = {Awad, Ahmed},
+  title        = {AnubisX: A Formal Framework for Behavioral Digital Attribution},
+  version      = {3.0.0},
+  year         = {2026},
+  doi          = {10.5281/zenodo.21393392},
+  url          = {https://github.com/AnubisXFramework/AnubisXFramework}
+}
+
+### IEEE
+A. Awad, "AnubisX: A Formal Framework for Behavioral Digital Attribution," Version 3.0.0, 2026. doi: 10.5281/zenodo.21393392.
+
+### CSL JSON
+{
+  "type": "software",
+  "title": "AnubisX: A Formal Framework for Behavioral Digital Attribution",
+  "version": "3.0.0",
+  "author": [{"family": "Awad", "given": "Ahmed"}],
+  "issued": {"date-parts": [[2026]]},
+  "doi": "10.5281/zenodo.21393392",
+  "url": "https://github.com/AnubisXFramework/AnubisXFramework",
+  "license": "CC BY 4.0"
+}
+
+## Repository and Resources
+- GitHub: https://github.com/AnubisXFramework/AnubisXFramework
+- Zenodo: https://zenodo.org/doi/10.5281/zenodo.21393392
+- ORCID: https://orcid.org/0009-0005-0654-3393
+- License: CC BY 4.0
+- Foundational Paper: https://anubisxframework.github.io/AnubisX_Framework_Foundational_Paper_v3.0.md
+
+## Related Work References
+1. Stamatatos, E. (2009). A survey of modern authorship attribution methods. JASIST, 60(3), 538-556.
+2. Koppel, M., Schler, J., & Argamon, S. (2009). Computational methods in authorship attribution. JASIST, 60(1), 9-26.
+3. Prasad, N., et al. (2025). A survey of cyber threat attribution. Computers & Security, 157, 104606.
+4. Casey, E. (2011). Digital Evidence and Computer Crime (3rd ed.). Academic Press.
+5. Aitken, C. G. G., & Taroni, F. (2004). Statistics and the Evaluation of Evidence (2nd ed.). Wiley.

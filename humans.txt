@@ -1,0 +1,22 @@
+# humans.txt — AnubisX Framework
+
+## Author
+Ahmed Awad (NullC0d3)
+ORCID: https://orcid.org/0009-0005-0654-3393
+GitHub: https://github.com/AnubisXFramework
+Email: anubisxframework@gmail.com
+
+## Site
+Title: AnubisX Framework
+Description: A Formal Framework for Behavioral Digital Attribution
+Language: English
+Version: 3.0.0
+License: CC BY 4.0
+DOI: https://doi.org/10.5281/zenodo.21393392
+Repository: https://github.com/AnubisXFramework/AnubisXFramework
+
+## Standards
+HTML5, CSS3, JavaScript, Schema.org JSON-LD, Dublin Core, OpenGraph, Twitter Cards
+
+## Colophon
+Built with HTML, CSS, and JavaScript. Hosted on GitHub Pages.

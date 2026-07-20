@@ -1,0 +1,7 @@
+# security.txt — AnubisX Framework
+# This is a research project website. No security vulnerability disclosure program is available at this time.
+
+Contact: mailto:anubisxframework@gmail.com
+Expires: 2027-07-21T00:00:00Z
+Preferred-Languages: en
+Canonical: https://anubisxframework.github.io/security.txt
