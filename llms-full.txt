@@ -10,6 +10,7 @@ Current attribution methods depend on technical identifiers that sophisticated a
 
 **Ahmed Awad (NullC0d3)** — Independent security researcher, OSINT practitioner, and author of the AnubisX Framework.
 
+- Website: https://ahmedawadresearch.github.io
 - ORCID: https://orcid.org/0009-0005-0654-3393
 - GitHub: https://github.com/AnubisXFramework
 - Email: anubisxframework@gmail.com

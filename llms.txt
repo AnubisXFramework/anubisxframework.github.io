@@ -5,6 +5,7 @@ AnubisX is an original research framework that formalizes the problem of attribu
 
 ## Author
 Ahmed Awad (NullC0d3) — Independent Researcher, Behavioral Digital Attribution
+Website: https://ahmedawadresearch.github.io
 ORCID: https://orcid.org/0009-0005-0654-3393
 Email: anubisxframework@gmail.com
 
