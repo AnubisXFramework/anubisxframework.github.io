@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Framework Architecture — AnubisX</title>
+<meta name='description' content='Six-layer architecture for behavioral digital attribution.'>
+<link rel='stylesheet' href='../css/design-system.css'><link rel='stylesheet' href='../css/style.css'>
+<link rel='canonical' href='https://anubisxframework.github.io/architecture/'>
+</head>
+<body>
+<header class='site-header'>
+<nav class='container flex-between py-md'>
+<a href='/' class='logo flex-center gap-2'><img src='../img/logo.svg' alt='AnubisX' width='40' height='40'><span class='text-gold font-bold'>AnubisX</span></a>
+<ul class='nav-menu flex gap-4'>
+<li><a href='/framework/'>Framework</a></li>
+<li><a href='/theory/'>Theory</a></li>
+<li><a href='/architecture/' class='text-accent'>Architecture</a></li>
+<li><a href='/mathematics/'>Mathematics</a></li>
+</ul>
+</nav>
+</header>
+<main class='container py-3xl'>
+<h1 class='text-center mb-lg'>Framework Architecture</h1>
+<img src='../svg/architecture-diagram.svg' alt='Six-Layer Architecture' class='mb-lg'>
+<h2 class='mb-md'>Six-Layer Architecture</h2>
+<table class='table mb-lg'>
+<thead><tr><th>Layer</th><th>Responsibility</th><th>Implementation Status</th></tr></thead>
+<tbody>
+<tr><td>1 — Data Layer</td><td>Raw data ingestion, validation</td><td>IMPLEMENTED (Twitter adapter)</td></tr>
+<tr><td>2 — Feature Layer</td><td>Modality-specific extraction</td><td>IMPLEMENTED (stylometric)</td></tr>
+<tr><td>3 — Profile Layer</td><td>Profile construction, storage</td><td>IMPLEMENTED (SQLite)</td></tr>
+<tr><td>4 — Comparison Layer</td><td>Similarity computation</td><td>IMPLEMENTED (FAISS)</td></tr>
+<tr><td>5 — Evidence Layer</td><td>Score calibration, fusion</td><td>NOT IMPLEMENTED</td></tr>
+<tr><td>6 — Decision Layer</td><td>Identity decision, reporting</td><td>NOT IMPLEMENTED</td></tr>
+</tbody>
+</table>
+<h2 class='mt-3 mb-md'>Six-Stage Pipeline</h2>
+<img src='../svg/pipeline-diagram.svg' alt='Six-Stage Pipeline' class='mb-lg'>
+<ol class='mb-lg'>
+<li><strong>Ingestion</strong> — Data acquisition through platform-specific adapters.</li>
+<li><strong>Feature Extraction</strong> — Modality-specific feature computation with normalization.</li>
+<li><strong>Profile Construction</strong> — Fingerprint generation with quality assessment.</li>
+<li><strong>Comparison</strong> — Similarity computation using configured metrics.</li>
+<li><strong>Evidence Evaluation</strong> — Score calibration and likelihood ratio computation.</li>
+<li><strong>Decision</strong> — Threshold-based classification with confidence quantification.</li>
+</ol>
+<p>Stages 1–4 are implemented in the prototype. Stages 5–6 are PROPOSED.</p>
+</main>
+<footer class='site-footer py-xl'><div class='container text-center'><p class='text-muted'>© 2026 Ahmed Awad. CC BY 4.0</p></div></footer>
+</body>
+</html>

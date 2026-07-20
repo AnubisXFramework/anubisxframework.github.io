@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200" role="img" aria-label="Six-Stage Pipeline">
+<defs>
+<marker id="flow-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,8 L8,4 z" fill="#00d4ff"/></marker>
+<style>.label{font-family:Arial,Helvetica,sans-serif;font-size:13px;fill:#fffff8}.status{font-family:Arial,Helvetica,sans-serif;font-size:11px;fill:#888}</style>
+</defs>
+<text x="450" y="20" text-anchor="middle" class="label" font-size="16">Attribution Pipeline Stages</text>
+<g id="stages">
+<rect x="20" y="40" width="130" height="60" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1" rx="4"/><text x="85" y="62" text-anchor="middle" class="label">1. Ingestion</text><text x="85" y="78" text-anchor="middle" class="status">Raw data acquisition</text>
+<polygon points="150,70 160,70 160,80 150,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
+<rect x="180" y="40" width="130" height="60" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1" rx="4"/><text x="245" y="62" text-anchor="middle" class="label">2. Extraction</text><text x="245" y="78" text-anchor="middle" class="status">Feature computation</text>
+<polygon points="310,70 320,70 320,80 310,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
+<rect x="340" y="40" width="130" height="60" fill="#1a1a2e" stroke="#d4af37" stroke-width="1" rx="4"/><text x="405" y="62" text-anchor="middle" class="label">3. Construction</text><text x="405" y="78" text-anchor="middle" class="status">Profile generation</text>
+<polygon points="470,70 480,70 480,80 470,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
+<rect x="500" y="40" width="130" height="60" fill="#1a1a2e" stroke="#d4af37" stroke-width="1" rx="4"/><text x="565" y="62" text-anchor="middle" class="label">4. Comparison</text><text x="565" y="78" text-anchor="middle" class="status">Similarity search</text>
+<polygon points="630,70 640,70 640,80 630,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
+<rect x="660" y="40" width="110" height="60" fill="#0f0f1a" stroke="#ffbf00" stroke-width="1" stroke-dasharray="4,2" rx="4"/><text x="715" y="62" text-anchor="middle" class="label">5. Evidence</text><text x="715" y="78" text-anchor="middle" class="status">LR computation</text>
+<polygon points="770,70 780,70 780,80 770,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
+<rect x="790" y="40" width="110" height="60" fill="#0f0f1a" stroke="#ffbf00" stroke-width="1" stroke-dasharray="4,2" rx="4"/><text x="845" y="62" text-anchor="middle" class="label">6. Decision</text><text x="845" y="78" text-anchor="middle" class="status">Classification</text>
+</g>
+</svg>

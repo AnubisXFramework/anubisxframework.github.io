@@ -1,0 +1,16 @@
+{
+  "name": "AnubisX Framework",
+  "short_name": "AnubisX",
+  "description": "A Formal Framework for Behavioral Digital Attribution",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#1a1a2e",
+  "icons": [
+    {
+      "src": "/img/logo.svg",
+      "sizes": "40x40",
+      "type": "image/svg+xml"
+    }
+  ]
+}

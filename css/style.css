@@ -1,0 +1,57 @@
+/* AnubisX Framework Styles */
+
+.py-sm { padding-top: var(--spacing-sm); padding-bottom: var(--spacing-sm); }
+.py-md { padding-top: var(--spacing-md); padding-bottom: var(--spacing-md); }
+.py-xl { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
+.py-2xl { padding-top: 4rem; padding-bottom: 4rem; }
+.py-3xl { padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl); }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.logo { font-family: var(--font-family-display); font-size: 1.25rem; font-weight: 600; }
+
+.nav-menu { list-style: none; }
+
+.nav-menu a {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+}
+
+.nav-menu a:hover { color: var(--color-accent); background: var(--color-primary); }
+
+.hero {
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-primary-dark);
+}
+
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-xl { font-size: var(--font-size-xl); }
+.font-bold { font-weight: 700; }
+
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+.mb-md { margin-bottom: var(--spacing-md); }
+
+.table { font-size: var(--font-size-sm); }
+
+@media (max-width: 768px) {
+  .nav-menu { display: none; }
+  .hero h1 { font-size: var(--font-size-3xl); }
+}

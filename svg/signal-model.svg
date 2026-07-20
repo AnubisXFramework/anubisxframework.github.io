@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 220" width="700" height="220" role="img" aria-label="Behavioral Signal Model">
+<defs>
+<style>.title{font-family:Arial,Helvetica,sans-serif;font-size:16px;fill:#fffff8}.label{font-family:Arial,Helvetica,sans-serif;font-size:12px;fill:#c0c0c0}.math{font-family:serif;font-size:13px;fill:#d4af37}</style>
+</defs>
+<rect x="20" y="30" width="660" height="170" fill="none" stroke="#2c2c3a" stroke-width="1" rx="4"/>
+<text x="350" y="20" text-anchor="middle" class="title">Behavioral Signal Model: y(t,c,p) = y_cog(t) + y_ctx(c) + y_plat(p) + ε(t,c,p)</text>
+<g transform="translate(50,70)">
+<rect width="110" height="40" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1" rx="3"/><text x="55" y="25" text-anchor="middle" class="label">Cognitive</text><text x="55" y="40" text-anchor="middle" class="label">y_cog(t)</text>
+<polygon points="110,50 120,50 120,60 110,60" fill="#00d4ff"/>
+</g>
+<g transform="translate(160,70)">
+<rect width="110" height="40" fill="#1a1a2e" stroke="#708090" stroke-width="1" rx="3"/><text x="55" y="25" text-anchor="middle" class="label">Contextual</text><text x="55" y="40" text-anchor="middle" class="label">y_ctx(c)</text>
+<polygon points="110,50 120,50 120,60 110,60" fill="#708090"/>
+</g>
+<g transform="translate(270,70)">
+<rect width="110" height="40" fill="#1a1a2e" stroke="#d4af37" stroke-width="1" rx="3"/><text x="55" y="25" text-anchor="middle" class="label">Platform</text><text x="55" y="40" text-anchor="middle" class="label">y_plat(p)</text>
+<polygon points="110,50 120,50 120,60 110,60" fill="#d4af37"/>
+</g>
+<g transform="translate(380,70)">
+<rect width="110" height="40" fill="#1a1a2e" stroke="#ffbf00" stroke-width="1" rx="3"/><text x="55" y="25" text-anchor="middle" class="label">Noise</text><text x="55" y="40" text-anchor="middle" class="label">ε(t,c,p)</text>
+<polygon points="110,50 120,50 120,60 110,60" fill="#ffbf00"/>
+</g>
+<g transform="translate(490,40)">
+<rect width="180" height="70" fill="#0f0f1a" stroke="#00d4ff" stroke-width="2" rx="4"/><text x="90" y="30" text-anchor="middle" class="math">y(t,c,p) = Σ + ε</text>
+<text x="90" y="50" text-anchor="middle" class="label">Observed Behavioral Signal</text>
+</g>
+</svg>

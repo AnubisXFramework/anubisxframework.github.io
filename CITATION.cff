@@ -1,0 +1,12 @@
+cff-version: "1.2.0"
+message: "If you use AnubisX in your research, please cite the framework."
+title: "AnubisX: A Formal Framework for Behavioral Digital Attribution"
+version: "3.0.0"
+doi: "10.5281/zenodo.21393392"
+date-released: 2026-07-20
+url: "https://github.com/AnubisXFramework/AnubisXFramework"
+license: "CC-BY-4.0"
+authors:
+- family-names: "Awad"
+  given-names: "Ahmed"
+  orcid: "https://orcid.org/0009-0000-0654-3393"
