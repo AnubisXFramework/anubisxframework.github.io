@@ -49,6 +49,7 @@
 .mb-xl { margin-bottom: var(--spacing-xl); }
 .mb-md { margin-bottom: var(--spacing-md); }
 
+.text-secondary { color: var(--color-text-secondary); }
 .table { font-size: var(--font-size-sm); }
 
 @media (max-width: 768px) {

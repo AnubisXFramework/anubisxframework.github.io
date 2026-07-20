@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Research Roadmap — AnubisX Framework</title>
+<meta name='description' content='Development roadmap and future research directions for the AnubisX Framework.'>
+<link rel='stylesheet' href='../css/design-system.css'><link rel='stylesheet' href='../css/style.css'>
+<link rel='canonical' href='https://anubisxframework.github.io/roadmap/'>
+</head>
+<body>
+<header class='site-header'>
+<nav class='container flex-between py-md'>
+<a href='/' class='logo flex-center gap-2'><img src='../img/logo1.png' alt='AnubisX' width='40' height='40'></a>
+<ul class='nav-menu flex gap-4'>
+<li><a href='/framework/'>Framework</a></li>
+        <li><a href='/theory/'>Theory</a></li>
+        <li><a href='/mathematics/'>Mathematics</a></li>
+        <li><a href='/algorithms/'>Algorithms</a></li>
+        <li><a href='/architecture/'>Architecture</a></li>
+        <li><a href='/validation/'>Validation</a></li>
+        <li><a href='/evidence/'>Evidence</a></li>
+        <li><a href='/downloads/'>Downloads</a></li>
+        <li><a href='/citation/'>Citation</a></li>
+</ul>
+</nav>
+</header>
+<main class='container reading-container py-3xl'>
+<h1 class='text-center mb-lg'>Research Roadmap</h1>
+
+<p class='mb-lg'>The AnubisX Framework is an active research project. This roadmap outlines the planned development trajectory across three time horizons, from short-term implementation priorities through long-term community adoption goals. Progress depends on research funding, collaboration opportunities, and community contributions.</p>
+
+<h2 class='mt-3 mb-md'>Current Status</h2>
+<p class='mb-lg'>Version 3.0.0 (July 2026) delivers the complete formal specification: 16 axioms, 292 mathematical objects, 37 algorithms, 5 modalities, 6-layer architecture, and a 4-tier validation framework with 31 criteria. The open-source prototype (Anubis Twitter v2.5) demonstrates stylometric feasibility. Empirical validation has been conducted for the stylometric modality only (15 experiments, 31 accounts).</p>
+
+<h2 class='mt-3 mb-md'>Short-term Goals (2026–2027)</h2>
+
+<h3 class='mt-2 mb-sm'>Multi-Modality Prototype Implementation</h3>
+<p class='mb-md'>Implement algorithmic prototypes for at least two additional modalities (chrono-profiling and terminal profiling) to demonstrate the framework's multimodal architecture beyond stylometric analysis. This requires developing feature extraction pipelines, behavioral profile construction, and comparison engines for each modality.</p>
+
+<h3 class='mt-2 mb-sm'>Hash Non-Determinism Fix</h3>
+<p class='mb-md'>Resolve the Python hash() non-determinism issue affecting character n-gram features (100 of 372 dimensions). Replace with SHA-256-based hashing to ensure reproducible feature vectors across executions. This is a prerequisite for reliable empirical validation.</p>
+
+<h3 class='mt-2 mb-sm'>Extended Empirical Validation</h3>
+<p class='mb-md'>Expand empirical validation beyond the current 31 Twitter accounts to include additional platforms and language contexts. Target: 100+ accounts across 3+ platforms, including English-language data, to assess generalizability of the stylometric modality.</p>
+
+<h3 class='mt-2 mb-sm'>Confidence Calibration (ALG-023)</h3>
+<p class='mb-md'>Develop and implement algorithm ALG-023 (Confidence Calibration), currently at TBD status. This algorithm is required for operational deployment and will provide statistically principled confidence intervals for attribution decisions.</p>
+
+<h2 class='mt-3 mb-md'>Medium-term Goals (2027–2028)</h2>
+
+<h3 class='mt-2 mb-sm'>Complete Multi-Modality Integration</h3>
+<p class='mb-md'>Implement all five behavioral modalities within the prototype, including network analysis and media forensics. Develop the evidence fusion layer to combine attribution decisions across modalities using the formal framework specified in the mathematical architecture.</p>
+
+<h3 class='mt-2 mb-sm'>Tier II and Tier III Validation</h3>
+<p class='mb-md'>Execute the complete Tier II (Implementation) validation suite to verify algorithmic correctness across all implemented modalities. Conduct comprehensive Tier III (Empirical) validation with sufficient statistical power to assess the framework's attribution accuracy across diverse conditions.</p>
+
+<h3 class='mt-2 mb-sm'>Cross-Platform Generalization Study</h3>
+<p class='mb-md'>Conduct a systematic study of cross-platform behavioral consistency. Evaluate whether behavioral features extracted from one platform (e.g., Twitter) can reliably attribute artifacts from another platform (e.g., Reddit, Telegram) to the same source individual.</p>
+
+<h3 class='mt-2 mb-sm'>Performance Benchmarking</h3>
+<p class='mb-md'>Characterize computational requirements for full multimodal analysis. Develop performance benchmarks for feature extraction, profile construction, comparison, and evidence aggregation across all five modalities. Identify optimization opportunities for large-scale deployment.</p>
+
+<h2 class='mt-3 mb-md'>Long-term Goals (2028+)</h2>
+
+<h3 class='mt-2 mb-sm'>Tier IV Operational Readiness</h3>
+<p class='mb-md'>Achieve Tier IV (Operational) validation status, demonstrating that the framework meets all 31 acceptance criteria across all four tiers. This includes certification of algorithmic correctness, empirical reliability, and operational robustness in real-world deployment scenarios.</p>
+
+<h3 class='mt-2 mb-sm'>Community Adoption and Contribution</h3>
+<p class='mb-md'>Establish a community of researchers and practitioners using and contributing to the AnubisX Framework. Develop comprehensive documentation, tutorials, and reference implementations to lower the barrier to entry for new contributors. Foster collaborative development of novel algorithms and modalities.</p>
+
+<h3 class='mt-2 mb-sm'>Legal and Evidentiary Standards Alignment</h3>
+<p class='mb-md'>Work toward alignment with legal and forensic evidentiary standards (e.g., Daubert standard, FRE 702). Publish validation studies in peer-reviewed venues to establish the framework's scientific acceptance within the forensic and legal communities.</p>
+
+<h3 class='mt-2 mb-sm'>Cross-Domain Extension</h3>
+<p class='mb-md'>Extend the framework beyond digital forensics to adjacent domains such as cybersecurity threat attribution, insider threat detection, and online disinformation tracking. Adapt the cognitive centroid theory and formal architecture to domain-specific behavioral evidence types.</p>
+
+<h2 class='mt-3 mb-md'>Release History</h2>
+<table class='table mb-lg'>
+<thead><tr><th>Version</th><th>Date</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>v3.0.0</td><td>July 2026</td><td>Scientific re-architecture with complete formal specification (1032 pages including appendices): 16 axioms, 292 mathematical objects, 37 algorithms, 5 modalities, 6-layer architecture, 31 validation criteria.</td></tr>
+<tr><td>v2.5</td><td>March 2026</td><td>Open-source prototype release. Anubis Twitter prototype with stylometric modality for Arabic Twitter data. 47 Python files, ~2,800 LOC. 15 experiments on 31 Egyptian Twitter accounts.</td></tr>
+<tr><td>v1.0</td><td>2025</td><td>Initial framework conceptualization. Axiomatic foundation and Cognitive Centroid theory formulated. Mathematical framework and algorithm catalog outlined.</td></tr>
+</tbody>
+</table>
+</main>
+<footer class="site-footer py-xl">
+  <div class="container">
+    <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem">
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">AnubisX Framework</p>
+        <p class="text-muted" style="font-size:0.875rem">A Formal Framework for Behavioral Digital Attribution</p>
+        <p class="text-muted" style="font-size:0.75rem">Version 3.0.0 · Pre-publication</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Author</p>
+        <p class="text-muted" style="font-size:0.875rem">Ahmed Awad (NullC0d3)</p>
+        <p class="text-muted" style="font-size:0.75rem">ORCID: 0009-0005-0654-3393</p>
+        <p class="text-muted" style="font-size:0.75rem">DOI: 10.5281/zenodo.21393392</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Links</p>
+        <p class="text-muted" style="font-size:0.75rem">GitHub: /AnubisXFramework/AnubisXFramework</p>
+        <p class="text-muted" style="font-size:0.75rem">Zenodo: 10.5281/zenodo.21393392</p>
+        <p class="text-muted" style="font-size:0.75rem">Email: anubisxframework@gmail.com</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Navigate</p>
+        <p class="text-muted" style="font-size:0.75rem">Framework · Theory · Mathematics</p>
+        <p class="text-muted" style="font-size:0.75rem">Algorithms · Architecture · Validation</p>
+        <p class="text-muted" style="font-size:0.75rem">Evidence · Downloads · Citation</p>
+        <p class="text-muted" style="font-size:0.75rem">Timeline · Origin · About</p>
+        <p class="text-muted" style="font-size:0.75rem">FAQ · Roadmap · Contact</p>
+      </div>
+    </div>
+    <div class="text-center" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem">
+      <p class="text-muted" style="font-size:0.75rem">© 2026 Ahmed Awad (NullC0d3). Licensed under CC BY 4.0.</p>
+      <p class="text-muted" style="font-size:0.75rem">This is a research framework website. Not an operational system.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -2,8 +2,8 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Validation — AnubisX</title>
-<meta name='description' content='Four-tier validation infrastructure with 31 acceptance criteria for behavioral attribution.'>
+<title>Validation Infrastructure — AnubisX Framework</title>
+<meta name='description' content='Four-tier validation infrastructure with 31 pre-specified acceptance criteria for the AnubisX Framework. Current validation status, experimental results, and known limitations.'>
 <link rel='stylesheet' href='../css/design-system.css'><link rel='stylesheet' href='../css/style.css'>
 <link rel='canonical' href='https://anubisxframework.github.io/validation/'>
 </head>
@@ -13,53 +13,103 @@
 <a href='/' class='logo flex-center gap-2'><img src='../img/logo1.png' alt='AnubisX' width='40' height='40'></a>
 <ul class='nav-menu flex gap-4'>
 <li><a href='/framework/'>Framework</a></li>
-<li><a href='/theory/'>Theory</a></li>
-<li><a href='/architecture/'>Architecture</a></li>
-<li><a href='/mathematics/'>Mathematics</a></li>
-<li><a href='/algorithms/'>Algorithms</a></li>
-<li><a href='/validation/' class='text-accent'>Validation</a></li>
-<li><a href='/downloads/'>Downloads</a></li>
-<li><a href='/citation/'>Citation</a></li>
+        <li><a href='/theory/'>Theory</a></li>
+        <li><a href='/mathematics/'>Mathematics</a></li>
+        <li><a href='/algorithms/'>Algorithms</a></li>
+        <li><a href='/architecture/'>Architecture</a></li>
+        <li><a href='/validation/' class='text-accent'>Validation</a></li>
+        <li><a href='/evidence/'>Evidence</a></li>
+        <li><a href='/downloads/'>Downloads</a></li>
+        <li><a href='/citation/'>Citation</a></li>
 </ul>
 </nav>
 </header>
 <main class='container reading-container py-3xl'>
-<h1 class='text-center mb-lg'>Four-Tier Validation Infrastructure</h1>
-<p class='mb-lg'>The framework defines 31 acceptance criteria across four verification tiers with thresholds defined a priori.</p>
+<h1 class='text-center mb-lg'>Validation Infrastructure</h1>
+<p class='mb-lg'>The AnubisX Framework defines a pre-specified four-tier validation infrastructure comprising 31 acceptance criteria with thresholds defined a priori. This section documents the current validation status, experimental results, known limitations, and the forward validation roadmap.</p>
+<h2 class='mt-3 mb-md'>Validation Framework</h2>
 <table class='table mb-lg'>
-<thead><tr><th>Tier</th><th>Focus</th><th>Criteria</th><th>Key Thresholds</th></tr></thead>
+<thead><tr><th>Tier</th><th>Focus</th><th>Criteria</th><th>Key Thresholds</th><th>Current Status</th></tr></thead>
 <tbody>
-<tr><td>Tier 1</td><td>Unit</td><td>6</td><td>100% pass on synthetic tests</td></tr>
-<tr><td>Tier 2</td><td>Component</td><td>8</td><td>Variance reduction ≥ 30%, d' ≥ 1.50</td></tr>
-<tr><td>Tier 3</td><td>System</td><td>10</td><td>AUC ≥ 0.95, EER ≤ 0.08, Rank-1 ≥ 0.90</td></tr>
-<tr><td>Tier 4</td><td>Operational</td><td>7</td><td>FAR drift < 0.1%/month, throughput ≥ 100/s</td></tr>
+<tr><td>Tier I</td><td>Foundation</td><td>6</td><td>100% pass on formal consistency checks</td><td>PROPOSED</td></tr>
+<tr><td>Tier II</td><td>Implementation</td><td>8</td><td>Variance reduction ≥ 30%, d' ≥ 1.50</td><td>PROPOSED</td></tr>
+<tr><td>Tier III</td><td>Empirical</td><td>10</td><td>AUC ≥ 0.95, EER ≤ 0.08, Rank-1 ≥ 0.90</td><td>PROPOSED</td></tr>
+<tr><td>Tier IV</td><td>Operational</td><td>7</td><td>FAR drift < 0.1%/month, throughput ≥ 100/s</td><td>PROPOSED</td></tr>
 </tbody>
 </table>
-<h2 class='mt-3 mb-md'>Validation Status</h2>
-<p class='mb-md'>These criteria are presented as a methodological contribution (PROPOSED). None have been empirically evaluated except the informal proof-of-concept experiments reported in Section 8.</p>
-<h2 class='mt-3 mb-md'>Experimental Validation (EXP-001–015)</h2>
+<h2 class='mt-3 mb-md'>Current Validation Status</h2>
+<p class='mb-md'>These criteria are presented as a methodological contribution (PROPOSED). None have been formally evaluated against the pre-specified thresholds. The informal proof-of-concept experiments reported in the Evidence section provide initial feasibility indications but do not constitute formal validation.</p>
+<p class='mb-md'>The open-source prototype (Anubis Twitter v2.5) provides prototype-level evidence for six of ten documented claims. These claims achieve prototype-validated status, meaning they are demonstrated in code and reproducible with the provided dataset and tools.</p>
+<ul class='mb-lg'>
+<li class='mb-2'>372-dimensional fingerprint vectors — PROTOTYPE-VALIDATED</li>
+<li class='mb-2'>Cross-user similarity distribution (μ = 0.697, σ = 0.105) — PROTOTYPE-VALIDATED</li>
+<li class='mb-2'>FAISS similarity search (6–8 μs per query) — PROTOTYPE-VALIDATED</li>
+<li class='mb-2'>Lexical feature discriminability across 31 users — PROTOTYPE-VALIDATED</li>
+<li class='mb-2'>Egyptian content verification (144 keywords, 58 slang, 12 locations) — PROTOTYPE-VALIDATED</li>
+<li class='mb-2'>Cross-platform adapter pattern — PROTOTYPE-VALIDATED</li>
+</ul>
+<h2 class='mt-3 mb-md'>Experimental Results</h2>
 <table class='table mb-lg'>
 <thead><tr><th>Experiment</th><th>Metric</th><th>Result</th></tr></thead>
 <tbody>
-<tr><td>EXP-001</td><td>Fingerprint dimensional consistency</td><td>31/31 accounts at 372-dim</td></tr>
-<tr><td>EXP-002</td><td>Cross-user similarity distribution</td><td>μ = 0.697, σ = 0.105, N = 465 pairs</td></tr>
-<tr><td>EXP-006</td><td>FAISS search latency</td><td>6–8 µs per query</td></tr>
-<tr><td>EXP-004</td><td>Lexical feature discriminability</td><td>Variation across 31 users</td></tr>
-<tr><td>EXP-015</td><td>Egyptian content verification</td><td>144 keywords, 58 slang, 12 locations</td></tr>
+<tr><td>EXP-001</td><td>Fingerprint dimensional consistency</td><td>31/31 accounts produce 372-dim vectors</td></tr>
+<tr><td>EXP-002</td><td>Cross-user cosine similarity distribution</td><td>μ = 0.697, σ = 0.105, N = 465 pairs</td></tr>
+<tr><td>EXP-004</td><td>Lexical feature discriminability</td><td>Significant variation across 31 users</td></tr>
+<tr><td>EXP-006</td><td>FAISS search latency</td><td>6–8 μs per query (single-threaded)</td></tr>
+<tr><td>EXP-015</td><td>Egyptian content verification</td><td>144 keywords, 58 slang terms, 12 locations</td></tr>
 </tbody>
 </table>
-<h2 class='mt-3 mb-md'>Prototype-Validated Claims</h2>
-<p>Six of ten documented claims achieve prototype-validated status:</p>
-<ul>
-<li>372-dimensional fingerprint vectors — VALIDATED</li>
-<li>Cross-user similarity distribution — VALIDATED</li>
-<li>FAISS similarity search — VALIDATED</li>
-<li>Lexical feature discriminability — VALIDATED</li>
-<li>Egyptian content verification — VALIDATED</li>
-<li>Cross-platform adapter pattern — VALIDATED</li>
+<h2 class='mt-3 mb-md'>Known Limitations</h2>
+<ul class='mb-lg'>
+<li class='mb-2'><strong>L1.</strong> All 31 criteria remain at PROPOSED status — none have been formally evaluated against thresholds.</li>
+<li class='mb-2'><strong>L2.</strong> Experimental evidence is limited to the stylometric modality; no validation exists for chrono-profiling, terminal profiling, network analysis, or media forensics.</li>
+<li class='mb-2'><strong>L3.</strong> The sample of 31 accounts from a single platform restricts generalizability across platforms, languages, and cultural contexts.</li>
+<li class='mb-2'><strong>L4.</strong> No adversarial robustness testing has been conducted; the framework's resilience to intentional obfuscation is unknown.</li>
+<li class='mb-2'><strong>L5.</strong> Algorithm ALG-023 (Confidence Calibration) at TBD status prevents operational deployment.</li>
 </ul>
-<p>Remaining four claims require additional data acquisition or infrastructure resolution.</p>
+<h2 class='mt-3 mb-md'>Validation Roadmap</h2>
+<ol class='mb-lg'>
+<li class='mb-2'><strong>Phase 1 — Foundation Review (Current):</strong> Peer review of the axiomatic foundation, mathematical framework, and validation infrastructure specification.</li>
+<li class='mb-2'><strong>Phase 2 — Prototype Extension:</strong> Extend the open-source prototype to support additional modalities and expand the dataset beyond 31 accounts.</li>
+<li class='mb-2'><strong>Phase 3 — Tier I &amp; II Formal Evaluation:</strong> Systematic evaluation against the 14 foundation and implementation criteria with pre-registered protocols.</li>
+<li class='mb-2'><strong>Phase 4 — Tier III Empirical Validation:</strong> Large-scale empirical studies across multiple platforms, languages, and behavioral modalities.</li>
+<li class='mb-2'><strong>Phase 5 — Tier IV Operational Readiness:</strong> Deployment testing, adversarial robustness evaluation, and confidence calibration implementation.</li>
+</ol>
 </main>
-<footer class='site-footer py-xl'><div class='container text-center'><p class='text-muted mb-2'>© 2026 Ahmed Awad (NullC0d3) . CC BY 4.0 License.</p><p class='text-muted'>ORCID: https://orcid.org/0009-0005-0654-3393</p></div></footer>
+<footer class="site-footer py-xl">
+  <div class="container">
+    <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem">
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">AnubisX Framework</p>
+        <p class="text-muted" style="font-size:0.875rem">A Formal Framework for Behavioral Digital Attribution</p>
+        <p class="text-muted" style="font-size:0.75rem">Version 3.0.0 · Pre-publication</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Author</p>
+        <p class="text-muted" style="font-size:0.875rem">Ahmed Awad (NullC0d3)</p>
+        <p class="text-muted" style="font-size:0.75rem">ORCID: 0009-0005-0654-3393</p>
+        <p class="text-muted" style="font-size:0.75rem">DOI: 10.5281/zenodo.21393392</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Links</p>
+        <p class="text-muted" style="font-size:0.75rem">GitHub: /AnubisXFramework/AnubisXFramework</p>
+        <p class="text-muted" style="font-size:0.75rem">Zenodo: 10.5281/zenodo.21393392</p>
+        <p class="text-muted" style="font-size:0.75rem">Email: anubisxframework@gmail.com</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Navigate</p>
+        <p class="text-muted" style="font-size:0.75rem">Framework · Theory · Mathematics</p>
+        <p class="text-muted" style="font-size:0.75rem">Algorithms · Architecture · Validation</p>
+        <p class="text-muted" style="font-size:0.75rem">Evidence · Downloads · Citation</p>
+        <p class="text-muted" style="font-size:0.75rem">Timeline · Origin · About</p>
+        <p class="text-muted" style="font-size:0.75rem">FAQ · Roadmap · Contact</p>
+      </div>
+    </div>
+    <div class="text-center" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem">
+      <p class="text-muted" style="font-size:0.75rem">© 2026 Ahmed Awad (NullC0d3). Licensed under CC BY 4.0.</p>
+      <p class="text-muted" style="font-size:0.75rem">This is a research framework website. Not an operational system.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

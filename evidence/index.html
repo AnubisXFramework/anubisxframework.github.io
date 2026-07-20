@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Experimental Evidence — AnubisX Framework</title>
+<meta name='description' content='Complete experimental evidence from the AnubisX Framework prototype. 15 proof-of-concept experiments, dataset description, failure cases, and reproducibility information.'>
+<link rel='stylesheet' href='../css/design-system.css'><link rel='stylesheet' href='../css/style.css'>
+<link rel='canonical' href='https://anubisxframework.github.io/evidence/'>
+</head>
+<body>
+<header class='site-header'>
+<nav class='container flex-between py-md'>
+<a href='/' class='logo flex-center gap-2'><img src='../img/logo1.png' alt='AnubisX' width='40' height='40'></a>
+<ul class='nav-menu flex gap-4'>
+<li><a href='/framework/'>Framework</a></li>
+        <li><a href='/theory/'>Theory</a></li>
+        <li><a href='/mathematics/'>Mathematics</a></li>
+        <li><a href='/algorithms/'>Algorithms</a></li>
+        <li><a href='/architecture/'>Architecture</a></li>
+        <li><a href='/validation/'>Validation</a></li>
+        <li><a href='/evidence/' class='text-accent'>Evidence</a></li>
+        <li><a href='/downloads/'>Downloads</a></li>
+        <li><a href='/citation/'>Citation</a></li>
+</ul>
+</nav>
+</header>
+<main class='container reading-container py-3xl'>
+<h1 class='text-center mb-lg'>Experimental Evidence</h1>
+<p class='mb-lg'>The AnubisX Framework prototype (Anubis Twitter v2.5) was evaluated through 15 proof-of-concept experiments designed to test individual framework claims. These experiments provide initial feasibility evidence for the stylometric modality. This section describes the dataset, experimental results, failure cases, negative results, and reproducibility information.</p>
+<h2 class='mt-3 mb-md'>Dataset</h2>
+<table class='table mb-lg'>
+<thead><tr><th>Property</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Platform</td><td>Twitter (archived public data)</td></tr>
+<tr><td>Language</td><td>Egyptian Arabic (colloquial)</td></tr>
+<tr><td>Accounts</td><td>31 Egyptian Twitter accounts</td></tr>
+<tr><td>Data type</td><td>Public timeline tweets</td></tr>
+<tr><td>Format</td><td>CSV with tweet text, timestamps, metadata</td></tr>
+<tr><td>Collection</td><td>Via Twitter API v2 (academic research access)</td></tr>
+<tr><td>Privacy</td><td>Anonymized; only publicly available data used</td></tr>
+</tbody>
+</table>
+<h2 class='mt-3 mb-md'>Experimental Results</h2>
+<h3 class='mt-2 mb-sm'>EXP-001: Fingerprint Dimensional Consistency</h3>
+<p class='mb-md'>All 31 accounts successfully produce 372-dimensional behavioral fingerprint vectors, confirming dimensional consistency of the feature extraction pipeline. No accounts produced malformed or incomplete vectors.</p>
+<h3 class='mt-2 mb-sm'>EXP-002: Cross-User Cosine Similarity</h3>
+<p class='mb-md'>Cross-user cosine similarity across 465 unique account pairs yields a mean of 0.697 with standard deviation 0.105. This distribution demonstrates that behavioral fingerprints carry user-specific signal but also exhibit substantial inter-user similarity, motivating the need for discriminative analysis methods.</p>
+<h3 class='mt-2 mb-sm'>EXP-004: Lexical Feature Discriminability</h3>
+<p class='mb-md'>Lexical feature analysis reveals significant variation in word frequency distributions, character n-gram patterns, and punctuation usage across the 31 accounts. Feature-level analysis confirms that lexical features contribute meaningful discriminative power for user attribution.</p>
+<h3 class='mt-2 mb-sm'>EXP-006: FAISS Search Latency</h3>
+<p class='mb-md'>FAISS-based similarity search achieves 6–8 μs per query in single-threaded mode on consumer hardware (Intel i7). This latency is well within real-time requirements for operational deployment and scales to much larger databases.</p>
+<h3 class='mt-2 mb-sm'>EXP-015: Egyptian Content Verification</h3>
+<p class='mb-md'>The Egyptian Arabic content verification pipeline identifies 144 domain-specific keywords, 58 colloquial slang terms, and 12 location references across the dataset. This experiment validates the language-specific preprocessing required for accurate feature extraction in non-English contexts.</p>
+<h2 class='mt-3 mb-md'>Failure Cases</h2>
+<table class='table mb-lg'>
+<thead><tr><th>Issue</th><th>Description</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Hash non-determinism</td><td>Some feature hashing methods produce inconsistent output across library versions</td><td>UNRESOLVED</td></tr>
+<tr><td>Small sample size</td><td>31 accounts from a single demographic insufficient for generalizability</td><td>LIMITATION</td></tr>
+<tr><td>Single modality</td><td>Only stylometric features tested; 4 of 5 modalities have no empirical evidence</td><td>LIMITATION</td></tr>
+<tr><td>No baseline comparison</td><td>No comparison against existing authorship attribution methods</td><td>PENDING</td></tr>
+</tbody>
+</table>
+<h2 class='mt-3 mb-md'>Negative Results</h2>
+<ul class='mb-lg'>
+<li class='mb-2'>No evidence for cross-modal correlation — the relationship between stylometric, chrono, terminal, network, and media features remains uncharacterized.</li>
+<li class='mb-2'>No evidence for optimal feature dimensionality — 372-dim was selected by convention, not by systematic optimization.</li>
+<li class='mb-2'>No evidence for generalizability beyond Egyptian Arabic Twitter users.</li>
+<li class='mb-2'>No evidence for temporal stability of fingerprints over time scales exceeding the collection window.</li>
+<li class='mb-2'>No evidence for robustness against adversarial obfuscation or stylometric countermeasures.</li>
+</ul>
+<h2 class='mt-3 mb-md'>Reproducibility</h2>
+<p class='mb-md'>All experiments are reproducible using the open-source Anubis Twitter v2.5 prototype (47 Python files, ~2,800 LOC). Requirements include:</p>
+<ul class='mb-lg'>
+<li class='mb-2'>Python 3.9+ with dependencies listed in requirements.txt</li>
+<li class='mb-2'>FAISS for similarity search (CPU version sufficient for 31 accounts)</li>
+<li class='mb-2'>Twitter API v2 credentials (academic research access recommended)</li>
+<li class='mb-2'>Alternatively, the provided sample dataset CSV can be used without API access</li>
+<li class='mb-2'>Consumer hardware (Intel i7 or equivalent) is sufficient for all 15 experiments</li>
+</ul>
+</main>
+<footer class="site-footer py-xl">
+  <div class="container">
+    <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem">
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">AnubisX Framework</p>
+        <p class="text-muted" style="font-size:0.875rem">A Formal Framework for Behavioral Digital Attribution</p>
+        <p class="text-muted" style="font-size:0.75rem">Version 3.0.0 · Pre-publication</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Author</p>
+        <p class="text-muted" style="font-size:0.875rem">Ahmed Awad (NullC0d3)</p>
+        <p class="text-muted" style="font-size:0.75rem">ORCID: 0009-0005-0654-3393</p>
+        <p class="text-muted" style="font-size:0.75rem">DOI: 10.5281/zenodo.21393392</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Links</p>
+        <p class="text-muted" style="font-size:0.75rem">GitHub: /AnubisXFramework/AnubisXFramework</p>
+        <p class="text-muted" style="font-size:0.75rem">Zenodo: 10.5281/zenodo.21393392</p>
+        <p class="text-muted" style="font-size:0.75rem">Email: anubisxframework@gmail.com</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Navigate</p>
+        <p class="text-muted" style="font-size:0.75rem">Framework · Theory · Mathematics</p>
+        <p class="text-muted" style="font-size:0.75rem">Algorithms · Architecture · Validation</p>
+        <p class="text-muted" style="font-size:0.75rem">Evidence · Downloads · Citation</p>
+        <p class="text-muted" style="font-size:0.75rem">Timeline · Origin · About</p>
+        <p class="text-muted" style="font-size:0.75rem">FAQ · Roadmap · Contact</p>
+      </div>
+    </div>
+    <div class="text-center" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem">
+      <p class="text-muted" style="font-size:0.75rem">© 2026 Ahmed Awad (NullC0d3). Licensed under CC BY 4.0.</p>
+      <p class="text-muted" style="font-size:0.75rem">This is a research framework website. Not an operational system.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

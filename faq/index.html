@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Frequently Asked Questions — AnubisX Framework</title>
+<meta name='description' content='Answers to common questions about the AnubisX Framework for Behavioral Digital Attribution.'>
+<link rel='stylesheet' href='../css/design-system.css'><link rel='stylesheet' href='../css/style.css'>
+<link rel='canonical' href='https://anubisxframework.github.io/faq/'>
+</head>
+<body>
+<header class='site-header'>
+<nav class='container flex-between py-md'>
+<a href='/' class='logo flex-center gap-2'><img src='../img/logo1.png' alt='AnubisX' width='40' height='40'></a>
+<ul class='nav-menu flex gap-4'>
+<li><a href='/framework/'>Framework</a></li>
+        <li><a href='/theory/'>Theory</a></li>
+        <li><a href='/mathematics/'>Mathematics</a></li>
+        <li><a href='/algorithms/'>Algorithms</a></li>
+        <li><a href='/architecture/'>Architecture</a></li>
+        <li><a href='/validation/'>Validation</a></li>
+        <li><a href='/evidence/'>Evidence</a></li>
+        <li><a href='/downloads/'>Downloads</a></li>
+        <li><a href='/citation/'>Citation</a></li>
+</ul>
+</nav>
+</header>
+<main class='container reading-container py-3xl'>
+<h1 class='text-center mb-lg'>Frequently Asked Questions</h1>
+
+<h2 class='mt-3 mb-md'>General</h2>
+
+<h3 class='mt-2 mb-sm'>What is AnubisX?</h3>
+<p class='mb-md'>AnubisX is a formal framework for behavioral digital attribution. It provides a complete, theoretically grounded methodology for attributing digital artifacts to their sources based on behavioral evidence. The framework integrates an axiomatic foundation (16 axioms in 6 groups), the Cognitive Centroid theory of behavioral identity, a mathematical framework comprising 292 objects across 24 categories, an algorithmic catalog of 37 algorithms spanning 5 behavioral modalities, a six-layer architectural design, and a pre-specified four-tier validation infrastructure with 31 acceptance criteria.</p>
+
+<h3 class='mt-2 mb-sm'>Is AnubisX production-ready?</h3>
+<p class='mb-md'>No. AnubisX is a research framework. The open-source prototype implements only the stylometric modality, and empirical validation is limited to 31 Egyptian Twitter accounts. The framework is formally specified but not yet ready for operational deployment. See the <a href='/framework/'>Framework Overview</a> for a detailed status breakdown.</p>
+
+<h3 class='mt-2 mb-sm'>What makes AnubisX different from other attribution methods?</h3>
+<p class='mb-md'>AnubisX is the first framework to provide a complete formal foundation for behavioral digital attribution. Unlike ad-hoc or single-modality approaches, it defines an axiomatic system, a formal theory of behavioral identity (Cognitive Centroid), a comprehensive mathematical framework, a catalog of algorithms across five behavioral modalities, and a pre-specified validation infrastructure — all within a single, internally consistent framework.</p>
+
+<h2 class='mt-3 mb-md'>Technical</h2>
+
+<h3 class='mt-2 mb-sm'>What is the Cognitive Centroid?</h3>
+<p class='mb-md'>The Cognitive Centroid is a theoretical construct that models behavioral identity as an asymptotic attractor in a high-dimensional feature space. It represents the hypothetical center of an individual's behavioral patterns, toward which empirical observations converge as the sample size increases. This enables formal reasoning about identity from incomplete or noisy evidence.</p>
+
+<h3 class='mt-2 mb-sm'>How many algorithms does the framework include?</h3>
+<p class='mb-md'>The Algorithm Catalog includes 37 algorithms organized across 9 domains, spanning all 5 behavioral modalities. Of these, 33 are established (implementable based on existing literature), 2 are proposed (requiring novel development), and 2 are TBD (to be determined).</p>
+
+<h3 class='mt-2 mb-sm'>What behavioral modalities are covered?</h3>
+<p class='mb-md'>The framework defines five behavioral modalities: (1) Stylometric — analysis of writing style and linguistic patterns; (2) Chrono-profiling — temporal patterns of activity; (3) Terminal profiling — command-line and system interaction patterns; (4) Network analysis — communication and relationship patterns; and (5) Media forensics — digital media artifact analysis.</p>
+
+<h3 class='mt-2 mb-sm'>What is currently implemented in the prototype?</h3>
+<p class='mb-md'>The open-source prototype (Anubis Twitter v2.5) implements only the stylometric modality. It consists of 47 Python files (~2,800 LOC) and focuses on Arabic Twitter data. The remaining four modalities are specified at the algorithmic level but have not been implemented.</p>
+
+<h2 class='mt-3 mb-md'>Validation</h2>
+
+<h3 class='mt-2 mb-sm'>What has been validated?</h3>
+<p class='mb-md'>Empirical validation has been conducted on the stylometric modality through 15 experiments (EXP-001 through EXP-015) using 31 Egyptian Twitter accounts. Results demonstrate feasibility of behavioral attribution within this limited scope.</p>
+
+<h3 class='mt-2 mb-sm'>What validation is planned?</h3>
+<p class='mb-md'>The framework specifies a four-tier validation infrastructure with 31 acceptance criteria: Tier I (Foundation) validates axiomatic and mathematical consistency; Tier II (Implementation) validates algorithmic correctness; Tier III (Empirical) validates experimental reliability; Tier IV (Operational) validates deployment readiness. Only a subset of Tier III has been addressed to date.</p>
+
+<h3 class='mt-2 mb-sm'>What are the known limitations?</h3>
+<p class='mb-md'>Key limitations include: (L1) only stylometric analysis has been empirically tested; (L2) the prototype implements only one of five modalities; (L3) evidence is limited to 31 accounts from a single platform; (L4) computational requirements for multimodal analysis are uncharacterized; (L5) algorithm ALG-023 (Confidence Calibration) is at TBD status; (L6) generalizability across languages, platforms, and cultures is unestablished. See the <a href='/framework/'>Framework Overview</a> for full details.</p>
+
+<h2 class='mt-3 mb-md'>Usage</h2>
+
+<h3 class='mt-2 mb-sm'>Can I use AnubisX in my research?</h3>
+<p class='mb-md'>Yes. The framework and prototype are open-source under CC BY 4.0 License. You may use, adapt, and build upon the work with appropriate attribution. Researchers are encouraged to contribute to the development of unimplemented modalities and to conduct independent validation studies.</p>
+
+<h3 class='mt-2 mb-sm'>How should I cite AnubisX?</h3>
+<p class='mb-md'>Please cite the framework as: Awad, A. (2026). <em>AnubisX: A Formal Framework for Behavioral Digital Attribution</em> (Version 3.0.0) [Computer software]. See the <a href='/citation/'>Citation</a> page for APA, BibTeX, and IEEE formats.</p>
+
+<h3 class='mt-2 mb-sm'>Where is the source code?</h3>
+<p class='mb-md'>The source code is hosted on GitHub at <a href='https://github.com/AnubisXFramework/AnubisXFramework' class='text-accent'>github.com/AnubisXFramework/AnubisXFramework</a>. The repository includes the prototype implementation, dataset (31 Egyptian Twitter account JSON files), and full documentation.</p>
+</main>
+<footer class="site-footer py-xl">
+  <div class="container">
+    <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem">
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">AnubisX Framework</p>
+        <p class="text-muted" style="font-size:0.875rem">A Formal Framework for Behavioral Digital Attribution</p>
+        <p class="text-muted" style="font-size:0.75rem">Version 3.0.0 · Pre-publication</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Author</p>
+        <p class="text-muted" style="font-size:0.875rem">Ahmed Awad (NullC0d3)</p>
+        <p class="text-muted" style="font-size:0.75rem">ORCID: 0009-0005-0654-3393</p>
+        <p class="text-muted" style="font-size:0.75rem">DOI: 10.5281/zenodo.21393392</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Links</p>
+        <p class="text-muted" style="font-size:0.75rem">GitHub: /AnubisXFramework/AnubisXFramework</p>
+        <p class="text-muted" style="font-size:0.75rem">Zenodo: 10.5281/zenodo.21393392</p>
+        <p class="text-muted" style="font-size:0.75rem">Email: anubisxframework@gmail.com</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Navigate</p>
+        <p class="text-muted" style="font-size:0.75rem">Framework · Theory · Mathematics</p>
+        <p class="text-muted" style="font-size:0.75rem">Algorithms · Architecture · Validation</p>
+        <p class="text-muted" style="font-size:0.75rem">Evidence · Downloads · Citation</p>
+        <p class="text-muted" style="font-size:0.75rem">Timeline · Origin · About</p>
+        <p class="text-muted" style="font-size:0.75rem">FAQ · Roadmap · Contact</p>
+      </div>
+    </div>
+    <div class="text-center" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem">
+      <p class="text-muted" style="font-size:0.75rem">© 2026 Ahmed Awad (NullC0d3). Licensed under CC BY 4.0.</p>
+      <p class="text-muted" style="font-size:0.75rem">This is a research framework website. Not an operational system.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

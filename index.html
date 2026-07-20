@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnubisX Framework — Behavioral Digital Attribution</title>
-  <meta name="description" content="A formal framework for behavioral digital attribution. 16 axioms, Cognitive Centroid theory, 292 mathematical objects, 37 algorithms across 5 modalities.">
+  <title>AnubisX Framework — A Formal Framework for Behavioral Digital Attribution</title>
+  <meta name="description" content="AnubisX is an original research framework that formalizes behavioral digital attribution through 16 axioms, Cognitive Centroid theory, 292 mathematical objects, 37 algorithms across 5 modalities, a six-layer architecture, and a four-tier validation infrastructure.">
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/style.css">
   <meta property="og:title" content="AnubisX Framework">
@@ -25,10 +25,11 @@
       <ul class="nav-menu flex gap-4">
         <li><a href="/framework/">Framework</a></li>
         <li><a href="/theory/">Theory</a></li>
-        <li><a href="/architecture/">Architecture</a></li>
         <li><a href="/mathematics/">Mathematics</a></li>
         <li><a href="/algorithms/">Algorithms</a></li>
+        <li><a href="/architecture/">Architecture</a></li>
         <li><a href="/validation/">Validation</a></li>
+        <li><a href="/evidence/">Evidence</a></li>
         <li><a href="/downloads/">Downloads</a></li>
         <li><a href="/citation/">Citation</a></li>
       </ul>
@@ -38,22 +39,76 @@
   <main>
     <section class="hero">
       <div class="container reading-container text-center py-3xl">
+        <div class="mb-lg">
+          <span style="display: inline-block; border: 1px solid var(--color-secondary); color: var(--color-secondary); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: var(--font-size-sm);">Research Framework — v3.0.0</span>
+        </div>
         <h1 class="mb-2">AnubisX Framework</h1>
-        <p class="text-secondary mb-xl">A Formal Framework for Behavioral Digital Attribution</p>
-        <p class="mb-xl">Digital attribution — linking digital artifacts to their human source — underpins cyber threat intelligence, digital forensics, and counter-fraud. Current methods rely on technical identifiers that sophisticated adversaries can spoof or eliminate.</p>
+        <p class="text-secondary mb-md">A Formal Framework for Behavioral Digital Attribution</p>
+        <p class="mb-xl">AnubisX is an original research framework that formalizes the problem of attributing digital artifacts to their human source through a unified theoretical foundation, mathematical formalism, algorithmic catalog, and open-source prototype.</p>
         <div class="flex-center gap-3">
-          <a href="/downloads/" class="btn btn-primary">Download Framework</a>
-          <a href="/framework/" class="btn btn-secondary">Framework Overview</a>
+          <a href="/framework/" class="btn btn-primary">Read the Framework</a>
+          <a href="/downloads/" class="btn btn-secondary">Download the Prototype</a>
         </div>
       </div>
     </section>
 
-    <section class="abstract py-3xl">
+    <section class="scientific-status py-3xl">
       <div class="container reading-container">
-        <h2 class="text-center mb-lg">Scientific Abstract</h2>
-        <p class="mb-md"><strong>Problem.</strong> Digital attribution — linking digital artifacts to their human source — underpins cyber threat intelligence, digital forensics, and counter-fraud. Current methods rely on technical identifiers that sophisticated adversaries can spoof or eliminate.</p>
-        <p class="mb-md"><strong>Research Gap.</strong> Behavioral attribution methods exist across stylometry, biometrics, and forensic linguistics but lack a unifying theoretical foundation, pre-specified validation criteria, and transparent documentation of limitations.</p>
-        <p><strong>Methodology.</strong> The AnubisX framework comprises: (a) 16 axioms governing attribution reasoning; (b) Cognitive Centroid theory; (c) 292 mathematical objects across 24 categories; (d) 37 algorithms spanning five behavioral modalities; (e) four-tier validation infrastructure with 31 acceptance criteria.</p>
+        <h2 class="text-center mb-lg">Scientific Status</h2>
+        <p class="mb-lg">The AnubisX framework comprises multiple interdependent components at different stages of formalization and validation. The table below summarizes the current scientific status of each major component as of v3.0.0. Statuses follow a five-stage lifecycle: PRE-SPECIFIED (requirements defined), PROPOSED (formalism introduced), SPECIFIED (fully documented), ESTABLISHED (formal proof or consistent evidence), IMPLEMENTED (prototype exists), and COMPLETED (all criteria satisfied).</p>
+        <table class="table">
+          <thead><tr><th>Component</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Axiomatic Foundation (16 axioms)</td><td>PROPOSED</td></tr>
+            <tr><td>Cognitive Centroid Theory</td><td>PROPOSED</td></tr>
+            <tr><td>Mathematical Framework (292 objects)</td><td>ESTABLISHED</td></tr>
+            <tr><td>Algorithm Catalog (37 algorithms)</td><td>33 ESTABLISHED, 2 PROPOSED, 2 TBD</td></tr>
+            <tr><td>Six-Layer Architecture</td><td>SPECIFIED</td></tr>
+            <tr><td>Stylometric Prototype (Anubis Twitter v2.5)</td><td>IMPLEMENTED</td></tr>
+            <tr><td>Experimental Validation (15 experiments)</td><td>COMPLETED (proof-of-concept)</td></tr>
+            <tr><td>Full Validation Suite (31 criteria, 4 tiers)</td><td>PRE-SPECIFIED</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="research-scope py-3xl">
+      <div class="container reading-container">
+        <h2 class="text-center mb-lg">Research Scope</h2>
+        <p class="mb-md">Behavioral digital attribution addresses the problem of determining the human source of digital actions and communications. Current attribution methods rely on technical identifiers — IP addresses, device fingerprints, account credentials — that sophisticated adversaries can spoof, eliminate, or obscure. AnubisX approaches attribution through behavioral signals: patterns in how individuals write, communicate, interact with systems, and generate digital artifacts that are difficult to consciously control.</p>
+        <p>The framework is designed to be modality-agnostic, platform-independent, and grounded in formal reasoning under uncertainty.</p>
+      </div>
+    </section>
+
+    <section class="framework-components py-3xl">
+      <div class="container reading-container">
+        <h2 class="text-center mb-lg">Framework Components</h2>
+        <p class="mb-lg">The AnubisX framework is organized into six principal components that together form a complete methodology for behavioral digital attribution:</p>
+        <ol>
+          <li class="mb-lg"><strong>Axiomatic Foundation (16 axioms).</strong> Six groups of axioms governing attribution reasoning: existence, distinctness, stability, observability, comparability, and accountability. These provide the logical underpinning for all subsequent framework elements.</li>
+          <li class="mb-lg"><strong>Cognitive Centroid Theory.</strong> A formal model of behavioral identity as an asymptotic attractor in high-dimensional feature space. The Cognitive Centroid represents the idealized behavioral signature of an individual, toward which empirical observations converge over time and across contexts.</li>
+          <li class="mb-lg"><strong>Mathematical Framework (292 objects, 24 categories).</strong> A comprehensive formal apparatus spanning vector spaces, probability distributions, information-theoretic measures, graph-theoretic constructs, and decision-theoretic criteria for attribution under uncertainty.</li>
+          <li class="mb-lg"><strong>Algorithm Catalog (37 algorithms, 5 modalities).</strong> Implementable procedures for feature extraction, profile construction, similarity computation, evidence evaluation, and decision fusion across stylometric, chrono-profiling, terminal profiling, network analysis, and media forensics modalities.</li>
+          <li class="mb-lg"><strong>Six-Layer Architecture.</strong> A modular architectural pattern comprising Data, Feature, Profile, Comparison, Evidence, and Decision layers. Each layer exposes a well-defined interface, enabling independent implementation, testing, and substitution of components.</li>
+          <li class="mb-lg"><strong>Validation Infrastructure (31 criteria, 4 tiers).</strong> A pre-specified four-tier validation framework with a priori thresholds for unit, component, system, and operational verification. Designed to prevent post-hoc justification and ensure reproducible evaluation.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="modalities py-3xl">
+      <div class="container">
+        <h2 class="text-center mb-lg">Behavioral Modalities</h2>
+        <p class="text-center mb-lg">The framework defines five behavioral modalities, each capturing a distinct class of behavioral signal. The stylometric modality is the most mature, with a validated prototype implementation.</p>
+        <table class="table">
+          <thead><tr><th>Modality</th><th>Behavioral Signal</th><th>Algorithms</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Stylometric</td><td>Vocabulary, syntax, discourse patterns</td><td>ALG-001–004</td><td>VALIDATED</td></tr>
+            <tr><td>Chrono-Profiling</td><td>Circadian rhythms, temporal activity patterns</td><td>ALG-005–008</td><td>FUTURE</td></tr>
+            <tr><td>Terminal Profiling</td><td>Command sequences, navigation patterns</td><td>ALG-009–012</td><td>FUTURE</td></tr>
+            <tr><td>Network Analysis</td><td>Graph topology, community structure</td><td>ALG-013–016</td><td>FUTURE</td></tr>
+            <tr><td>Media Forensics</td><td>File structure, metadata, naming conventions</td><td>ALG-017–020</td><td>FUTURE</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -62,6 +117,92 @@
         <h2 class="text-center mb-lg">Six-Layer Architecture</h2>
         <div class="flex-center">
           <img src="svg/architecture-diagram.svg" alt="Six-Layer Architecture Diagram" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="validation-summary py-3xl">
+      <div class="container">
+        <h2 class="text-center mb-lg">Validation Summary</h2>
+        <p class="text-center mb-lg">The framework defines 31 acceptance criteria across four verification tiers, with thresholds specified a priori to prevent post-hoc justification.</p>
+        <table class="table">
+          <thead><tr><th>Tier</th><th>Focus</th><th>Criteria</th><th>Key Thresholds</th></tr></thead>
+          <tbody>
+            <tr><td>Tier 1</td><td>Unit</td><td>6</td><td>100% pass on synthetic tests</td></tr>
+            <tr><td>Tier 2</td><td>Component</td><td>8</td><td>Variance reduction ≥ 30%, d' ≥ 1.50</td></tr>
+            <tr><td>Tier 3</td><td>System</td><td>10</td><td>AUC ≥ 0.95, EER ≤ 0.08, Rank-1 ≥ 0.90</td></tr>
+            <tr><td>Tier 4</td><td>Operational</td><td>7</td><td>FAR drift &lt; 0.1%/month, throughput ≥ 100/s</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="validation-results py-xl">
+      <div class="container">
+        <h2 class="text-center mb-lg">Experimental Results</h2>
+        <p class="text-center mb-lg">Proof-of-concept validation conducted on 31 Egyptian Twitter accounts (EXP-001 through EXP-015). Key results from the stylometric prototype are summarized below.</p>
+        <table class="table">
+          <thead><tr><th>Experiment</th><th>Metric</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>EXP-001</td><td>Fingerprint dimensional consistency</td><td>31/31 accounts at 372-dim (100%)</td></tr>
+            <tr><td>EXP-002</td><td>Cross-user similarity distribution</td><td>μ = 0.697, σ = 0.105, N = 465 pairs</td></tr>
+            <tr><td>EXP-006</td><td>FAISS search latency</td><td>6–8 µs per query</td></tr>
+            <tr><td>EXP-004</td><td>Lexical feature discriminability</td><td>Variation across 31 users confirmed</td></tr>
+            <tr><td>EXP-015</td><td>Egyptian content verification</td><td>144 keywords, 58 slang expressions, 12 locations</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="research-origin py-3xl">
+      <div class="container reading-container">
+        <h2 class="text-center mb-lg">Research Origin</h2>
+        <p class="mb-md">The AnubisX framework is the work of an independent researcher and is not affiliated with any academic institution, government agency, or commercial entity. The framework was conceived, developed, and documented solely by its author as an original contribution to the field of behavioral digital attribution.</p>
+        <p class="mb-md"><strong>Author.</strong> Ahmed Awad (nullc0d3) — independent security researcher, OSINT practitioner, and author of the AnubisX Framework. Research focus: behavioral digital attribution, formal methods for attribution under uncertainty, stylometric analysis, and multi-modal behavioral profiling.</p>
+        <p><strong>ORCID.</strong> <a href="https://orcid.org/0009-0005-0654-3393" target="_blank">https://orcid.org/0009-0005-0654-3393</a></p>
+      </div>
+    </section>
+
+    <section class="citation-guide py-3xl">
+      <div class="container reading-container text-center">
+        <h2 class="mb-lg">How to Cite</h2>
+        <div class="card mb-lg">
+          <h3 class="mb-md">APA Format</h3>
+          <pre class="mb-2">Awad, A. (2026). AnubisX: A Formal Framework for Behavioral Digital Attribution (Version 3.0.0) [Computer software]. https://doi.org/10.5281/zenodo.21393392</pre>
+          <button class="btn btn-secondary" data-copy="Awad, A. (2026). AnubisX: A Formal Framework for Behavioral Digital Attribution (Version 3.0.0) [Computer software]. https://doi.org/10.5281/zenodo.21393392">Copy APA</button>
+        </div>
+        <div class="flex-center gap-3">
+          <a href="https://zenodo.org/doi/10.5281/zenodo.21393392" class="btn btn-secondary">Zenodo DOI</a>
+          <a href="https://github.com/AnubisXFramework/AnubisXFramework" class="btn btn-secondary">GitHub</a>
+          <a href="/citation/" class="btn btn-primary">Citation Formats</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-preview py-3xl">
+      <div class="container reading-container">
+        <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+
+        <div class="card mb-lg">
+          <h3 class="mb-md">What is behavioral digital attribution?</h3>
+          <p class="mb-2">Behavioral digital attribution is the process of linking digital artifacts — text, commands, network activity, files — to their human source based on behavioral patterns rather than technical identifiers. It relies on the premise that individuals exhibit consistent, distinctive patterns in how they generate digital content, and that these patterns are difficult to consciously control or spoof.</p>
+          <a href="/framework/" class="text-accent">Read the framework introduction →</a>
+        </div>
+
+        <div class="card mb-lg">
+          <h3 class="mb-md">What makes AnubisX different from existing attribution methods?</h3>
+          <p class="mb-2">Existing attribution methods depend on technical identifiers (IP addresses, cookies, device fingerprints) that sophisticated adversaries can easily spoof, rotate, or eliminate. AnubisX approaches attribution through behavioral signals that are intrinsic to the individual and costly to mimic. Additionally, AnubisX provides a formal, transparent framework with pre-specified validation criteria — unlike existing approaches that often lack rigorous methodological documentation.</p>
+          <a href="/framework/#contributions" class="text-accent">See research contributions →</a>
+        </div>
+
+        <div class="card mb-lg">
+          <h3 class="mb-md">Is the framework ready for operational use?</h3>
+          <p class="mb-2">The AnubisX framework is a research contribution at the PROPOSED/ESTABLISHED stage. The stylometric prototype (Anubis Twitter v2.5) demonstrates proof-of-concept feasibility on a limited dataset. The full validation suite (31 criteria, 4 tiers) is pre-specified but has not yet been empirically evaluated. Operational deployment would require substantial additional development, data acquisition, and validation.</p>
+          <a href="/validation/" class="text-accent">View validation status →</a>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="/faq/" class="btn btn-secondary">View all FAQs</a>
         </div>
       </div>
     </section>
@@ -86,45 +227,44 @@
         </div>
       </div>
     </section>
-
-    <section class="validation-results py-xl">
-      <div class="container">
-        <h2 class="text-center mb-lg">Experimental Validation</h2>
-        <table class="table">
-          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
-          <tbody>
-            <tr><td>Fingerprint dimensional consistency</td><td>31/31 accounts (100%)</td></tr>
-            <tr><td>Mean cross-user cosine similarity</td><td>0.697 (σ = 0.105)</td></tr>
-            <tr><td>FAISS search latency</td><td>6–8 µs per query</td></tr>
-            <tr><td>Egyptian content verification</td><td>144 keyword matches, 58 slang expressions</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="cta py-3xl">
-      <div class="container reading-container text-center">
-        <h2 class="mb-lg">How to Cite This Work</h2>
-        <p class="mb-lg">Awad, A. (2026). AnubisX: A Formal Framework for Behavioral Digital Attribution. v3.0.0.</p>
-        <div class="flex-center gap-3">
-          <a href="https://zenodo.org/doi/10.5281/zenodo.21393392" class="btn btn-secondary">Zenodo DOI</a>
-          <a href="https://github.com/AnubisXFramework/AnubisXFramework" class="btn btn-secondary">GitHub</a>
-          <a href="/citation/" class="btn btn-primary">Citation Formats</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer py-xl">
-    <div class="container text-center">
-      <p class="text-muted mb-2">© 2026 Ahmed Awad (NullC0d3) . CC BY 4.0 License.</p>
-      <p class="text-muted">ORCID: https://orcid.org/0009-0005-0654-3393</p>
+    <div class="container">
+      <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem">
+        <div>
+          <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">AnubisX Framework</p>
+          <p class="text-muted" style="font-size:0.875rem">A Formal Framework for Behavioral Digital Attribution</p>
+          <p class="text-muted" style="font-size:0.75rem">Version 3.0.0 · Pre-publication</p>
+        </div>
+        <div>
+          <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Author</p>
+          <p class="text-muted" style="font-size:0.875rem">Ahmed Awad (NullC0d3)</p>
+          <p class="text-muted" style="font-size:0.75rem">ORCID: 0009-0005-0654-3393</p>
+          <p class="text-muted" style="font-size:0.75rem">DOI: 10.5281/zenodo.21393392</p>
+        </div>
+        <div>
+          <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Links</p>
+          <p class="text-muted" style="font-size:0.75rem">GitHub: /AnubisXFramework/AnubisXFramework</p>
+          <p class="text-muted" style="font-size:0.75rem">Zenodo: 10.5281/zenodo.21393392</p>
+          <p class="text-muted" style="font-size:0.75rem">Email: anubisxframework@gmail.com</p>
+        </div>
+        <div>
+          <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Navigate</p>
+          <p class="text-muted" style="font-size:0.75rem">Framework · Theory · Mathematics</p>
+          <p class="text-muted" style="font-size:0.75rem">Algorithms · Architecture · Validation</p>
+          <p class="text-muted" style="font-size:0.75rem">Evidence · Downloads · Citation</p>
+          <p class="text-muted" style="font-size:0.75rem">Timeline · Origin · About</p>
+          <p class="text-muted" style="font-size:0.75rem">FAQ · Roadmap · Contact</p>
+        </div>
+      </div>
+      <div class="text-center" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem">
+        <p class="text-muted" style="font-size:0.75rem">© 2026 Ahmed Awad (NullC0d3). Licensed under CC BY 4.0.</p>
+        <p class="text-muted" style="font-size:0.75rem">This is a research framework website. Not an operational system.</p>
+      </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
 </html>
-
-
-

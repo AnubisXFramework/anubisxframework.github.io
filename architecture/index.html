@@ -2,8 +2,8 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Framework Architecture — AnubisX</title>
-<meta name='description' content='Six-layer architecture for behavioral digital attribution.'>
+<title>Framework Architecture — AnubisX Framework</title>
+<meta name='description' content='Six-layer processing architecture for behavioral digital attribution. Complete layer specifications, pipeline flow, and prototype implementation details.'>
 <link rel='stylesheet' href='../css/design-system.css'><link rel='stylesheet' href='../css/style.css'>
 <link rel='canonical' href='https://anubisxframework.github.io/architecture/'>
 </head>
@@ -13,43 +13,129 @@
 <a href='/' class='logo flex-center gap-2'><img src='../img/logo1.png' alt='AnubisX' width='40' height='40'></a>
 <ul class='nav-menu flex gap-4'>
 <li><a href='/framework/'>Framework</a></li>
-<li><a href='/theory/'>Theory</a></li>
-<li><a href='/architecture/' class='text-accent'>Architecture</a></li>
-<li><a href='/mathematics/'>Mathematics</a></li>
-<li><a href='/algorithms/'>Algorithms</a></li>
-<li><a href='/validation/'>Validation</a></li>
-<li><a href='/downloads/'>Downloads</a></li>
-<li><a href='/citation/'>Citation</a></li>
+        <li><a href='/theory/'>Theory</a></li>
+        <li><a href='/mathematics/'>Mathematics</a></li>
+        <li><a href='/algorithms/'>Algorithms</a></li>
+        <li><a href='/architecture/' class='text-accent'>Architecture</a></li>
+        <li><a href='/validation/'>Validation</a></li>
+        <li><a href='/evidence/'>Evidence</a></li>
+        <li><a href='/downloads/'>Downloads</a></li>
+        <li><a href='/citation/'>Citation</a></li>
 </ul>
 </nav>
 </header>
 <main class='container py-3xl'>
+<section class='mb-3xl'>
 <h1 class='text-center mb-lg'>Framework Architecture</h1>
+<p class='lead text-center text-muted mb-lg' style='max-width:720px;margin-left:auto;margin-right:auto'>The AnubisX Framework defines a six-layer processing architecture for behavioral digital attribution. Each layer encapsulates a distinct phase of the attribution pipeline, from raw data acquisition through evidence generation, enabling modular development, testing, and extension.</p>
+</section>
+
+<section class='mb-3xl'>
+<h2 class='mb-md'>Architecture Diagram</h2>
 <img src='../svg/architecture-diagram.svg' alt='Six-Layer Architecture' class='mb-lg'>
-<h2 class='mb-md'>Six-Layer Architecture</h2>
-<table class='table mb-lg'>
-<thead><tr><th>Layer</th><th>Responsibility</th><th>Implementation Status</th></tr></thead>
-<tbody>
-<tr><td>1 — Data Layer</td><td>Raw data ingestion, validation</td><td>IMPLEMENTED (Twitter adapter)</td></tr>
-<tr><td>2 — Feature Layer</td><td>Modality-specific extraction</td><td>IMPLEMENTED (stylometric)</td></tr>
-<tr><td>3 — Profile Layer</td><td>Profile construction, storage</td><td>IMPLEMENTED (SQLite)</td></tr>
-<tr><td>4 — Comparison Layer</td><td>Similarity computation</td><td>IMPLEMENTED (FAISS)</td></tr>
-<tr><td>5 — Evidence Layer</td><td>Score calibration, fusion</td><td>NOT IMPLEMENTED</td></tr>
-<tr><td>6 — Decision Layer</td><td>Identity decision, reporting</td><td>NOT IMPLEMENTED</td></tr>
-</tbody>
-</table>
-<h2 class='mt-3 mb-md'>Six-Stage Pipeline</h2>
+</section>
+
+<section class='mb-3xl'>
+<h2 class='mb-md'>Layer Specifications</h2>
+
+<h3 class='mt-2 mb-sm'>L1 — Data Acquisition</h3>
+<p>Ingestion and validation of raw digital artifacts from platform-specific sources. The acquisition layer handles authentication, rate limiting, pagination, and initial structural validation of incoming data, producing a standardized intermediate representation for downstream processing.</p>
+<p><strong>Input:</strong> Raw API responses / exported datasets &nbsp;|&nbsp; <strong>Output:</strong> Validated artifact records<br>
+<strong>Processing:</strong> Platform adapters authenticate to source APIs, retrieve requested data windows, validate response structure and field completeness, and emit parsed records with attached provenance metadata.<br>
+<strong>Status:</strong> <span class='text-success'>Implemented</span> (Twitter adapter via API v2)</p>
+
+<h3 class='mt-2 mb-sm'>L2 — Data Normalization</h3>
+<p>Cleaning, standardization, and temporal alignment of acquired artifacts. Normalization resolves inconsistencies in field naming, data types, timestamps, and encoding across heterogeneous sources, producing a uniform schema for feature computation.</p>
+<p><strong>Input:</strong> Validated artifact records &nbsp;|&nbsp; <strong>Output:</strong> Normalized records (canonical schema)<br>
+<strong>Processing:</strong> Field mapping resolves source-specific naming to canonical attributes; timestamp normalization converts all temporal fields to UTC epoch; text encoding is unified to UTF-8; missing and malformed fields are flagged or imputed.<br>
+<strong>Status:</strong> <span class='text-success'>Implemented</span></p>
+
+<h3 class='mt-2 mb-sm'>L3 — Feature Extraction</h3>
+<p>Modality-specific feature computation producing a 372-dimensional behavioral feature vector. Extraction covers stylometric, temporal, and interaction-based modalities, each computed by a dedicated extractor module with configurable parameters.</p>
+<p><strong>Input:</strong> Normalized records &nbsp;|&nbsp; <strong>Output:</strong> 372-dim feature vector<br>
+<strong>Processing:</strong> Stylometric analysis computes character/word n-gram distributions, syntactic patterns, and readability indices; temporal analysis extracts posting rhythms, inter-arrival times, and burst patterns; interaction analysis derives reply/retweet/like ratios and network centrality proxies.<br>
+<strong>Status:</strong> <span class='text-success'>Implemented</span></p>
+
+<h3 class='mt-2 mb-sm'>L4 — Behavioral Profiling</h3>
+<p>Fingerprint generation and profile construction from extracted feature vectors. The profiling layer aggregates feature vectors across the available observation window, applies optional weighting and decay functions, and stores the resulting behavioral fingerprint in a persistent profile store.</p>
+<p><strong>Input:</strong> 372-dim feature vectors &nbsp;|&nbsp; <strong>Output:</strong> Behavioral fingerprint + profile record<br>
+<strong>Processing:</strong> Vectors are aggregated via configurable fusion strategy (mean, weighted moving average, or exponential decay); fingerprint quality metrics are computed (coverage, recency, consistency); profiles are indexed and persisted via the storage backend.<br>
+<strong>Status:</strong> <span class='text-success'>Implemented</span> (SQLite + NumPy)</p>
+
+<h3 class='mt-2 mb-sm'>L5 — Similarity &amp; Attribution</h3>
+<p>Distance computation and similarity search across behavioral profiles. The attribution layer compares a probe fingerprint against enrolled profiles using configurable distance metrics, returning ranked candidate lists with per-dimension contribution analysis.</p>
+<p><strong>Input:</strong> Probe fingerprint + enrolled profile set &nbsp;|&nbsp; <strong>Output:</strong> Ranked similarity list<br>
+<strong>Processing:</strong> Distance computation supports cosine, Euclidean, Manhattan, and Mahalanobis metrics; FAISS indexing enables approximate nearest-neighbor search at scale; per-dimension contribution scores identify which behavioral axes drive the similarity signal.<br>
+<strong>Status:</strong> <span class='text-warning'>Proposed</span> (FAISS integrated in prototype, full search pending)</p>
+
+<h3 class='mt-2 mb-sm'>L6 — Evidence Generation</h3>
+<p>Likelihood ratio computation, score calibration, and multi-evidence fusion. The evidence layer transforms raw similarity scores into calibrated likelihood ratios, fuses evidence across multiple modalities, and produces a final attribution decision with quantified uncertainty.</p>
+<p><strong>Input:</strong> Ranked similarity list &nbsp;|&nbsp; <strong>Output:</strong> Attribution report (LR + decision)<br>
+<strong>Processing:</strong> Score calibration via logistic regression or PAV transformation; likelihood ratio computation using kernel density estimation of within-source and between-source score distributions; fusion across modalities weighted by calibrated log-likelihood ratios; decision threshold optimization via cost-minimization curves.<br>
+<strong>Status:</strong> <span class='text-warning'>Proposed</span></p>
+</section>
+
+<section class='mb-3xl'>
+<h2 class='mb-md'>Processing Pipeline</h2>
 <img src='../svg/pipeline-diagram.svg' alt='Six-Stage Pipeline' class='mb-lg'>
 <ol class='mb-lg'>
-<li><strong>Ingestion</strong> — Data acquisition through platform-specific adapters.</li>
-<li><strong>Feature Extraction</strong> — Modality-specific feature computation with normalization.</li>
-<li><strong>Profile Construction</strong> — Fingerprint generation with quality assessment.</li>
-<li><strong>Comparison</strong> — Similarity computation using configured metrics.</li>
-<li><strong>Evidence Evaluation</strong> — Score calibration and likelihood ratio computation.</li>
-<li><strong>Decision</strong> — Threshold-based classification with confidence quantification.</li>
+<li><strong>Ingestion</strong> — Data acquisition through platform-specific adapters with authentication, rate-limit handling, and pagination. Produces validated artifact records with provenance metadata.</li>
+<li><strong>Feature Extraction</strong> — Modality-specific feature computation across stylometric, temporal, and interaction domains. Outputs normalized 372-dimensional feature vectors.</li>
+<li><strong>Profile Construction</strong> — Fingerprint generation via configurable vector aggregation with quality assessment. Fingerprints are indexed and persisted in the profile store.</li>
+<li><strong>Comparison</strong> — Similarity computation using configurable distance metrics (cosine, Euclidean, Manhattan). FAISS indexing supports approximate nearest-neighbor search over enrolled profiles.</li>
+<li><strong>Evidence Evaluation</strong> — Score calibration and likelihood ratio computation. Raw similarity scores are transformed into calibrated LRs via density estimation over score distributions.</li>
+<li><strong>Decision</strong> — Threshold-based classification with confidence quantification. The decision stage applies cost-minimization rules to produce a final attribution verdict.</li>
 </ol>
-<p>Stages 1–4 are implemented in the prototype. Stages 5–6 are PROPOSED.</p>
+<p class='text-muted'>Stages 1–4 are implemented in the prototype. Stages 5–6 are <strong>Proposed</strong> and are the subject of ongoing research.</p>
+</section>
+
+<section class='mb-3xl'>
+<h2 class='mb-md'>Prototype Implementation</h2>
+<p>The current prototype, <strong>Anubis Twitter v2.5</strong>, implements the first four layers of the architecture through five modular packages:</p>
+<ul class='mb-lg'>
+<li><strong>anubis-twitter-ingestion:</strong> L1 — Twitter API v2 adapter with tweet hydration, user lookup, and rate-limit management.</li>
+<li><strong>anubis-twitter-normalization:</strong> L2 — Record cleaning, field mapping, timestamp normalization, and thread reconstruction.</li>
+<li><strong>anubis-twitter-extraction:</strong> L3 — Stylometric and temporal feature extractors producing 372-dim vectors.</li>
+<li><strong>anubis-twitter-profiling:</strong> L4 — Fingerprint aggregation, quality scoring, and SQLite-backed profile storage.</li>
+<li><strong>anubis-twitter-comparison:</strong> L5 — FAISS-indexed similarity search with support for cosine and Euclidean distance; currently operating in experimental mode.</li>
+</ul>
+<p>Each package is independently testable and publishes typed interfaces consumed by the next layer. The comparison package includes a preliminary L5 implementation; full evidence generation (L6) and decision automation remain in design.</p>
+</section>
 </main>
-<footer class='site-footer py-xl'><div class='container text-center'><p class='text-muted mb-2'>© 2026 Ahmed Awad (NullC0d3) . CC BY 4.0 License.</p><p class='text-muted'>ORCID: https://orcid.org/0009-0005-0654-3393</p></div></footer>
+<footer class="site-footer py-xl">
+  <div class="container">
+    <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem">
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">AnubisX Framework</p>
+        <p class="text-muted" style="font-size:0.875rem">A Formal Framework for Behavioral Digital Attribution</p>
+        <p class="text-muted" style="font-size:0.75rem">Version 3.0.0 · Pre-publication</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Author</p>
+        <p class="text-muted" style="font-size:0.875rem">Ahmed Awad (NullC0d3)</p>
+        <p class="text-muted" style="font-size:0.75rem">ORCID: 0009-0005-0654-3393</p>
+        <p class="text-muted" style="font-size:0.75rem">DOI: 10.5281/zenodo.21393392</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Links</p>
+        <p class="text-muted" style="font-size:0.75rem">GitHub: /AnubisXFramework/AnubisXFramework</p>
+        <p class="text-muted" style="font-size:0.75rem">Zenodo: 10.5281/zenodo.21393392</p>
+        <p class="text-muted" style="font-size:0.75rem">Email: anubisxframework@gmail.com</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Navigate</p>
+        <p class="text-muted" style="font-size:0.75rem">Framework · Theory · Mathematics</p>
+        <p class="text-muted" style="font-size:0.75rem">Algorithms · Architecture · Validation</p>
+        <p class="text-muted" style="font-size:0.75rem">Evidence · Downloads · Citation</p>
+        <p class="text-muted" style="font-size:0.75rem">Timeline · Origin · About</p>
+        <p class="text-muted" style="font-size:0.75rem">FAQ · Roadmap · Contact</p>
+      </div>
+    </div>
+    <div class="text-center" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem">
+      <p class="text-muted" style="font-size:0.75rem">© 2026 Ahmed Awad (NullC0d3). Licensed under CC BY 4.0.</p>
+      <p class="text-muted" style="font-size:0.75rem">This is a research framework website. Not an operational system.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

@@ -2,8 +2,8 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Mathematical Foundations — AnubisX</title>
-<meta name='description' content='Mathematical framework: 292 objects, 24 categories, likelihood ratio evidence model.'>
+<title>Mathematical Foundations — AnubisX Framework</title>
+<meta name='description' content='Complete mathematical formalization of the AnubisX Framework: 292 objects across 24 categories, Behavioral Signal Model, Likelihood Ratio Evidence Framework, and formal definitions of key constructs.'>
 <link rel='stylesheet' href='../css/design-system.css'><link rel='stylesheet' href='../css/style.css'>
 <link rel='canonical' href='https://anubisxframework.github.io/mathematics/'>
 </head>
@@ -13,39 +13,125 @@
 <a href='/' class='logo flex-center gap-2'><img src='../img/logo1.png' alt='AnubisX' width='40' height='40'></a>
 <ul class='nav-menu flex gap-4'>
 <li><a href='/framework/'>Framework</a></li>
-<li><a href='/theory/'>Theory</a></li>
-<li><a href='/architecture/'>Architecture</a></li>
-<li><a href='/mathematics/' class='text-accent'>Mathematics</a></li>
-<li><a href='/algorithms/'>Algorithms</a></li>
-<li><a href='/validation/'>Validation</a></li>
-<li><a href='/downloads/'>Downloads</a></li>
-<li><a href='/citation/'>Citation</a></li>
+        <li><a href='/theory/'>Theory</a></li>
+        <li><a href='/mathematics/' class='text-accent'>Mathematics</a></li>
+        <li><a href='/algorithms/'>Algorithms</a></li>
+        <li><a href='/architecture/'>Architecture</a></li>
+        <li><a href='/validation/'>Validation</a></li>
+        <li><a href='/evidence/'>Evidence</a></li>
+        <li><a href='/downloads/'>Downloads</a></li>
+        <li><a href='/citation/'>Citation</a></li>
 </ul>
 </nav>
 </header>
 <main class='container reading-container py-3xl'>
-<h1 class='text-center mb-lg'>Mathematical Foundations</h1>
-<h2 class='mb-md'>Framework Structure</h2>
-<p class='mb-lg'>The mathematical framework comprises 292 objects across 24 categories, governed by six foundational principles.</p>
-<table class='table mb-lg'>
-<thead><tr><th>Layer</th><th>Categories</th><th>Objects</th></tr></thead>
-<tbody>
-<tr><td>1 — Foundation Types</td><td>Data types, sets, constants</td><td>39</td></tr>
-<tr><td>2 — Structured Types</td><td>Vectors, matrices, tensors</td><td>26</td></tr>
-<tr><td>3 — Transformations</td><td>Functions, normalizations, aggregations</td><td>31</td></tr>
-<tr><td>4 — Comparison & Evaluation</td><td>Metrics, distances, similarities</td><td>26</td></tr>
-<tr><td>5 — Uncertainty & Decision</td><td>Probabilities, confidences, scores</td><td>32</td></tr>
-<tr><td>6 — Constraint & Optimization</td><td>Constraints, objectives</td><td>15</td></tr>
-</tbody>
-</table>
-<h2 class='mt-3 mb-md'>Behavioral Signal Model</h2>
-<img src='../svg/signal-model.svg' alt='Behavioral Signal Model' class='mb-lg'>
-<p class='mb-md'>The observed behavioral signal from source s at time t on platform p in context c is modeled as:</p>
-<pre class='mb-lg'>y(t, c, p) = y_cog(t) + y_ctx(c) + y_plat(p) + ε(t, c, p)</pre>
-<h2 class='mt-3 mb-md'>Likelihood Ratio Framework</h2>
-<img src='../svg/likelihood-ratio.svg' alt='Likelihood Ratio Evidence' class='mb-lg'>
-<p>Evidence evaluation follows the likelihood ratio framework established in forensic science.</p>
+  <h1 class='text-center mb-lg'>Mathematical Foundations</h1>
+  <p class='text-center text-xl mb-xl'>A comprehensive mathematical framework for behavioral forensics: 292 formally defined objects organized into 24 categories across six abstraction layers, enabling rigorous attribution analysis through the Behavioral Signal Model and Likelihood Ratio evidence evaluation.</p>
+
+  <h2 class='mb-md'>Framework Structure</h2>
+  <p class='mb-lg'>The framework is organized into six hierarchical layers. Each layer defines its own categories of mathematical objects, with strict dependency ordering — higher layers build upon the types and transformations defined below.</p>
+  <table class='table mb-lg'>
+    <thead><tr><th>Layer</th><th>Categories</th><th>Objects</th></tr></thead>
+    <tbody>
+      <tr><td><strong>L1</strong> — Foundation Types</td><td>4 categories (primitives, sets, scalars, constants)</td><td>39</td></tr>
+      <tr><td><strong>L2</strong> — Structured Types</td><td>4 categories (vectors, matrices, tensors, indexed collections)</td><td>26</td></tr>
+      <tr><td><strong>L3</strong> — Transformations</td><td>4 categories (functions, mappings, normalizations, aggregations)</td><td>31</td></tr>
+      <tr><td><strong>L4</strong> — Comparison &amp; Evaluation</td><td>4 categories (metrics, distances, similarities, ranking functions)</td><td>26</td></tr>
+      <tr><td><strong>L5</strong> — Uncertainty &amp; Decision</td><td>5 categories (probabilities, likelihoods, confidences, scores, decision rules)</td><td>32</td></tr>
+      <tr><td><strong>L6</strong> — Constraint &amp; Optimization</td><td>3 categories (constraints, objective functions, solvers)</td><td>15</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class='mt-3 mb-md'>Behavioral Signal Model</h2>
+  <img src='../svg/signal-model.svg' alt='Behavioral Signal Model' class='mb-lg'>
+  <p class='mb-md'>The observed behavioral signal produced by a source <em>s</em> at time <em>t</em>, on platform <em>p</em>, in context <em>c</em>, is decomposed into four additive components:</p>
+  <pre class='mb-lg'>y(s, t, c, p) = y<sub>cog</sub>(s, t) + y<sub>ctx</sub>(c) + y<sub>plat</sub>(p) + ε(s, t, c, p)</pre>
+  <p class='mb-md'>where each component captures a distinct generative factor:</p>
+  <ul class='mb-lg'>
+    <li><strong>y<sub>cog</sub></strong> — cognitive signature: the stable, individual-specific component arising from the source's underlying cognitive processes and behavioral routines.</li>
+    <li><strong>y<sub>ctx</sub></strong> — contextual modulation: systematic variation introduced by the situational context (e.g., task type, time of day, environmental conditions).</li>
+    <li><strong>y<sub>plat</sub></strong> — platform bias: device- or platform-specific distortion of the observed signal (e.g., sensor noise, interface constraints, sampling rate).</li>
+    <li><strong>ε</strong> — irreducible observation noise: stochastic error term, assumed <em>E</em>[ε] = 0 with finite variance, encompassing measurement error and unmodeled transient effects.</li>
+  </ul>
+
+  <h2 class='mt-3 mb-md'>Likelihood Ratio Framework</h2>
+  <img src='../svg/likelihood-ratio.svg' alt='Likelihood Ratio Evidence' class='mb-lg'>
+  <p class='mb-md'>Evidence evaluation is grounded in the likelihood ratio framework, the foundational standard for forensic inference under uncertainty. The weight of evidence comparing two competing hypotheses — same source (<em>H</em><sub>same</sub>) versus different source (<em>H</em><sub>diff</sub>) — is quantified as:</p>
+  <pre class='mb-lg'>LR = P(E | H<sub>same</sub>) / P(E | H<sub>diff</sub>)</pre>
+  <p class='mb-md'>where <em>E</em> is the observed behavioral evidence. The posterior odds are obtained by multiplying the prior odds by the likelihood ratio:</p>
+  <pre class='mb-lg'>P(H<sub>same</sub> | E) / P(H<sub>diff</sub> | E) = LR × P(H<sub>same</sub>) / P(H<sub>diff</sub>)</pre>
+  <p class='mb-md'>Evidence strength is interpreted according to the following calibrated scale:</p>
+  <table class='table mb-lg'>
+    <thead><tr><th>LR Range</th><th>Verbal Scale</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td>LR &lt; 1</td><td>Negative evidence</td><td>Supports different-source hypothesis</td></tr>
+      <tr><td>1 ≤ LR &lt; 10</td><td>Weak evidence</td><td>Limited support for same-source hypothesis</td></tr>
+      <tr><td>10 ≤ LR &lt; 100</td><td>Moderate evidence</td><td>Appreciable support for same-source hypothesis</td></tr>
+      <tr><td>100 ≤ LR &lt; 1,000</td><td>Strong evidence</td><td>Convincing support for same-source hypothesis</td></tr>
+      <tr><td>LR ≥ 1,000</td><td>Very strong evidence</td><td>Extremely compelling support for same-source hypothesis</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class='mt-3 mb-md'>Key Mathematical Objects</h2>
+
+  <h3 class='mb-sm text-gold'>Behavioral Fingerprint</h3>
+  <p class='mb-md'>A behavioral fingerprint <em>F</em> is a finite-dimensional real vector representing the aggregation of cognitive and behavioral features extracted from a source's observed signal over a reference window. Formally, given a source <em>s</em> and a reference window <em>W</em> = [<em>t</em><sub>0</sub>, <em>t</em><sub>1</sub>], the fingerprint is defined as the image of the observed signal under a feature extraction mapping <em>φ</em> followed by a normalization <em>ν</em>:</p>
+  <pre class='mb-lg'>F(s, W) = ν ∘ φ [ y(s, ·, ·, ·) | _W ] ∈ ℝ<sup>d</sup></pre>
+  <p class='mb-md'>where <em>d</em> is the dimensionality of the fingerprint space. The mapping <em>φ</em> selects and transforms behavioral features, while <em>ν</em> ensures unit-length normalization (<em>||F||</em><sub>2</sub> = 1) so that similarity comparisons are scale-invariant.</p>
+
+  <h3 class='mb-sm text-gold'>Similarity Measure</h3>
+  <p class='mb-md'>The similarity between two behavioral fingerprints <em>F</em><sub>i</sub> and <em>F</em><sub>j</sub> is computed via cosine similarity, which measures the cosine of the angle between the two vectors in ℝ<sup>d</sup>:</p>
+  <pre class='mb-lg'>sim(F<sub>i</sub>, F<sub>j</sub>) = (F<sub>i</sub> · F<sub>j</sub>) / (||F<sub>i</sub>|| × ||F<sub>j</sub>||)</pre>
+  <p class='mb-md'>Since fingerprints are unit-normalized, the denominator equals 1, and the similarity reduces to the dot product: <em>sim(F<sub>i</sub>, F<sub>j</sub>) = F<sub>i</sub> · F<sub>j</sub></em>. The resulting similarity takes values in [−1, 1], where 1 indicates identical direction (maximal similarity), 0 indicates orthogonality (no linear association), and −1 indicates opposite direction (maximal dissimilarity). For behavioral attribution, only positive similarity values are considered interpretable; negative values are taken as evidence of dissimilar source characteristics.</p>
+
+  <h3 class='mb-sm text-gold'>Attribution Decision</h3>
+  <p class='mb-md'>The attribution decision for a questioned sample against a known source is formalized as a hypothesis test. Given a set of known-source fingerprints <em>K</em> = {<em>F</em><sub>1</sub>, …, <em>F</em><sub>n</sub>} and a questioned fingerprint <em>F</em><sub>q</sub>, the attribution function <em>A</em> returns a decision <em>d</em> ∈ {<em>same</em>, <em>diff</em>, <em>inconclusive</em>} together with a likelihood ratio <em>LR</em> quantifying the strength of evidence:</p>
+  <pre class='mb-lg'>A(F<sub>q</sub>, K) = (d, LR) where LR = sup<sub>θ ∈ Θ<sub>same</sub></sub> L(θ) / sup<sub>θ ∈ Θ<sub>diff</sub></sub> L(θ)</pre>
+  <p class='mb-md'>The decision rule is parameterized by two threshold values <em>τ</em><sub>lo</sub> and <em>τ</em><sub>hi</sub>:</p>
+  <pre class='mb-lg'>d = same       if LR ≥ τ<sub>hi</sub>
+d = diff       if LR ≤ τ<sub>lo</sub>
+d = inconclusive   otherwise</pre>
+  <p class='mb-md'>Default thresholds are set at <em>τ</em><sub>lo</sub> = 1 and <em>τ</em><sub>hi</sub> = 10, consistent with established forensic guidelines.</p>
+
+  <div class='text-center mt-3 mb-lg'>
+    <a href='../algorithms/' class='btn btn-primary'>View Algorithms</a>
+    <a href='../validation/' class='btn btn-secondary'>Validation Results</a>
+  </div>
 </main>
-<footer class='site-footer py-xl'><div class='container text-center'><p class='text-muted mb-2'>© 2026 Ahmed Awad (NullC0d3) . CC BY 4.0 License.</p><p class='text-muted'>ORCID: https://orcid.org/0009-0005-0654-3393</p></div></footer>
+<footer class="site-footer py-xl">
+  <div class="container">
+    <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem">
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">AnubisX Framework</p>
+        <p class="text-muted" style="font-size:0.875rem">A Formal Framework for Behavioral Digital Attribution</p>
+        <p class="text-muted" style="font-size:0.75rem">Version 3.0.0 · Pre-publication</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Author</p>
+        <p class="text-muted" style="font-size:0.875rem">Ahmed Awad (NullC0d3)</p>
+        <p class="text-muted" style="font-size:0.75rem">ORCID: 0009-0005-0654-3393</p>
+        <p class="text-muted" style="font-size:0.75rem">DOI: 10.5281/zenodo.21393392</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Links</p>
+        <p class="text-muted" style="font-size:0.75rem">GitHub: /AnubisXFramework/AnubisXFramework</p>
+        <p class="text-muted" style="font-size:0.75rem">Zenodo: 10.5281/zenodo.21393392</p>
+        <p class="text-muted" style="font-size:0.75rem">Email: anubisxframework@gmail.com</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#D4AF37;margin-bottom:0.5rem">Navigate</p>
+        <p class="text-muted" style="font-size:0.75rem">Framework · Theory · Mathematics</p>
+        <p class="text-muted" style="font-size:0.75rem">Algorithms · Architecture · Validation</p>
+        <p class="text-muted" style="font-size:0.75rem">Evidence · Downloads · Citation</p>
+        <p class="text-muted" style="font-size:0.75rem">Timeline · Origin · About</p>
+        <p class="text-muted" style="font-size:0.75rem">FAQ · Roadmap · Contact</p>
+      </div>
+    </div>
+    <div class="text-center" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem">
+      <p class="text-muted" style="font-size:0.75rem">© 2026 Ahmed Awad (NullC0d3). Licensed under CC BY 4.0.</p>
+      <p class="text-muted" style="font-size:0.75rem">This is a research framework website. Not an operational system.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
