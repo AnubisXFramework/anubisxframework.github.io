@@ -1,15 +1,131 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" role="img" aria-label="Likelihood Ratio Framework">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%" role="img" aria-label="Likelihood Ratio Evidence Framework">
 <defs>
-<style>.title{font-family:Arial,Helvetica,sans-serif;font-size:14px;fill:#fffff8}.label{font-family:Arial,Helvetica,sans-serif;font-size:12px;fill:#c0c0c0}.math{font-family:serif;font-size:16px;fill:#d4af37}</style>
+  <marker id="arrow-right" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+    <path d="M0,0 L6,3 L0,6" fill="#999" stroke="none"/>
+  </marker>
+  <marker id="arrow-down" markerWidth="6" markerHeight="6" refX="3" refY="5" orient="auto">
+    <path d="M0,0 L3,6 L6,0" fill="#999" stroke="none"/>
+  </marker>
+  <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/>
+  </filter>
+  <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="var(--bg-top, #0D0D14)"/>
+    <stop offset="100%" stop-color="var(--bg-bottom, #0A0A0F)"/>
+  </linearGradient>
+  <style>
+    .title { font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 700; fill: #D4AF37; }
+    .subtitle { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; fill: #999; }
+    .eq-main { font-family: 'Times New Roman', Times, serif; font-size: 26px; fill: #E8E8F0; font-style: italic; }
+    .eq { font-family: 'Times New Roman', Times, serif; font-size: 18px; fill: #E8E8F0; font-style: italic; }
+    .hyp-name { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #E8E8F0; }
+    .hyp-sym { font-family: 'Times New Roman', Times, serif; font-size: 16px; fill: #E8E8F0; font-style: italic; }
+    .hyp-desc { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 10px; fill: #999; }
+    .evidence-grade { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; }
+    .grade-desc { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 9px; fill: #999; }
+    .annotation { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 10px; fill: #888; }
+    @media (prefers-color-scheme: light) {
+      .eq-main { fill: #222; }
+      .eq { fill: #222; }
+      .hyp-name { fill: #222; }
+      .hyp-sym { fill: #222; }
+    }
+  </style>
 </defs>
-<rect x="50" y="30" width="500" height="140" fill="none" stroke="#2c2c3a" stroke-width="1" rx="4"/>
-<text x="300" y="20" text-anchor="middle" class="title">Likelihood Ratio Evidence Evaluation</text>
-<rect x="60" y="50" width="120" height="50" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1" rx="3"/><text x="120" y="75" text-anchor="middle" class="label">H_same</text><text x="120" y="92" text-anchor="middle" class="label">Same Source</text>
-<rect x="220" y="50" width="160" height="50" fill="#0f0f1a" stroke="#d4af37" stroke-width="2" rx="3"/><text x="300" y="75" text-anchor="middle" class="math">LR = P(E|H_same)</text><text x="300" y="92" text-anchor="middle" class="math">/ P(E|H_diff)</text>
-<rect x="420" y="50" width="120" height="50" fill="#1a1a2e" stroke="#ffbf00" stroke-width="1" rx="3"/><text x="480" y="75" text-anchor="middle" class="label">H_diff</text><text x="480" y="92" text-anchor="middle" class="label">Different Source</text>
-<polygon points="180,75 190,75 190,85 180,85" fill="#00d4ff"/><polygon points="380,75 390,75 390,85 380,85" fill="#00d4ff"/>
-<line x1="300" y1="100" x2="300" y2="180" stroke="#00d4ff" stroke-width="1"/><text x="300" y="140" text-anchor="middle" class="label" fill="#00d4ff">Evidence Grades</text>
-<rect x="180" y="160" width="80" height="20" fill="#1a1a2e" stroke="#50c878" stroke-width="1" rx="2"/><text x="220" y="174" text-anchor="middle" font-family="Arial" font-size="10" fill="#50c878">LR &gt; 100</text>
-<rect x="280" y="160" width="80" height="20" fill="#1a1a2e" stroke="#ffbf00" stroke-width="1" rx="2"/><text x="320" y="174" text-anchor="middle" font-family="Arial" font-size="10" fill="#ffbf00">LR 3-10</text>
-<rect x="380" y="160" width="80" height="20" fill="#1a1a2e" stroke="#dc143c" stroke-width="1" rx="2"/><text x="420" y="174" text-anchor="middle" font-family="Arial" font-size="10" fill="#dc143c">LR &lt; 0.1</text>
+
+<!-- Background -->
+<rect width="800" height="480" fill="url(#bg-grad)" rx="6"/>
+
+<!-- Title -->
+<text x="400" y="32" text-anchor="middle" class="title">Likelihood Ratio Evidence Framework</text>
+<text x="400" y="54" text-anchor="middle" class="subtitle">Bayesian Evaluation of Attribution Evidence</text>
+
+<!-- Main LR equation -->
+<g transform="translate(50, 80)">
+  <rect x="0" y="0" width="700" height="60" fill="rgba(212,175,55,0.04)" stroke="rgba(212,175,55,0.3)" stroke-width="1" rx="4"/>
+  <text x="350" y="25" text-anchor="middle" class="eq-main">LR = P(E | H<tspan dy="5" font-size="16">same</tspan>) / P(E | H<tspan dy="5" font-size="16">diff</tspan>)</text>
+  <text x="350" y="48" text-anchor="middle" class="annotation">Likelihood ratio: ratio of probabilities of observing evidence E under competing hypotheses</text>
+</g>
+
+<!-- Hypothesis panels -->
+<!-- H_same -->
+<g transform="translate(135, 170)">
+  <rect x="0" y="0" width="230" height="110" fill="rgba(21,101,192,0.06)" stroke="#1565C0" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="0" y="0" width="230" height="4" fill="#1565C0" rx="2"/>
+  <text x="115" y="28" text-anchor="middle" class="hyp-sym">H<tspan dy="4" font-size="13">same</tspan></text>
+  <text x="115" y="48" text-anchor="middle" class="hyp-name">Same Source</text>
+  <text x="115" y="66" text-anchor="middle" class="hyp-desc">The observed behavioral evidence</text>
+  <text x="115" y="80" text-anchor="middle" class="hyp-desc">originates from the same person</text>
+  <text x="115" y="94" text-anchor="middle" class="hyp-desc">as the reference profile</text>
+</g>
+
+<!-- Arrow -->
+<line x1="230" y1="225" x2="270" y2="225" stroke="#999" stroke-width="1.2" marker-end="url(#arrow-right)"/>
+
+<!-- Center: LR -->
+<g transform="translate(315, 170)">
+  <rect x="0" y="0" width="170" height="110" fill="rgba(212,175,55,0.06)" stroke="#D4AF37" stroke-width="1.5" rx="4" filter="url(#shadow)"/>
+  <text x="85" y="38" text-anchor="middle" class="eq">LR</text>
+  <text x="85" y="62" text-anchor="middle" class="hyp-name" fill="#D4AF37">Evidence</text>
+  <text x="85" y="80" text-anchor="middle" class="hyp-name" fill="#D4AF37">Strength</text>
+  <line x1="30" y1="92" x2="140" y2="92" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+  <text x="85" y="106" text-anchor="middle" class="annotation" fill="#D4AF37">Weight of evidence</text>
+</g>
+
+<!-- Arrow -->
+<line x1="485" y1="225" x2="525" y2="225" stroke="#999" stroke-width="1.2" marker-end="url(#arrow-right)"/>
+
+<!-- H_diff -->
+<g transform="translate(570, 170)">
+  <rect x="0" y="0" width="230" height="110" fill="rgba(255,143,0,0.06)" stroke="#FF8F00" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="0" y="0" width="230" height="4" fill="#FF8F00" rx="2"/>
+  <text x="115" y="28" text-anchor="middle" class="hyp-sym">H<tspan dy="4" font-size="13">diff</tspan></text>
+  <text x="115" y="48" text-anchor="middle" class="hyp-name">Different Source</text>
+  <text x="115" y="66" text-anchor="middle" class="hyp-desc">The observed behavioral evidence</text>
+  <text x="115" y="80" text-anchor="middle" class="hyp-desc">originates from a different person</text>
+  <text x="115" y="94" text-anchor="middle" class="hyp-desc">than the reference profile</text>
+</g>
+
+<!-- Evidence grades panel -->
+<g transform="translate(50, 310)">
+  <rect x="0" y="0" width="700" height="140" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1" rx="4"/>
+  <text x="350" y="22" text-anchor="middle" class="hyp-name" font-size="13">Evidence Grades (Verbal Equivalents)</text>
+  
+  <!-- Very strong support -->
+  <g transform="translate(20, 40)">
+    <rect x="0" y="0" width="148" height="80" fill="rgba(46,125,50,0.06)" stroke="#2E7D32" stroke-width="1.2" rx="4"/>
+    <text x="74" y="22" text-anchor="middle" class="evidence-grade" fill="#2E7D32">LR &gt; 100</text>
+    <text x="74" y="40" text-anchor="middle" class="grade-desc">Very strong support</text>
+    <text x="74" y="56" text-anchor="middle" class="grade-desc">for same source</text>
+    <text x="74" y="72" text-anchor="middle" class="grade-desc">(Conclusive)</text>
+  </g>
+  
+  <!-- Moderate support -->
+  <g transform="translate(186, 40)">
+    <rect x="0" y="0" width="148" height="80" fill="rgba(0,188,212,0.06)" stroke="#00BCD4" stroke-width="1.2" rx="4"/>
+    <text x="74" y="22" text-anchor="middle" class="evidence-grade" fill="#00BCD4">LR 10 – 100</text>
+    <text x="74" y="40" text-anchor="middle" class="grade-desc">Moderate support</text>
+    <text x="74" y="56" text-anchor="middle" class="grade-desc">for same source</text>
+    <text x="74" y="72" text-anchor="middle" class="grade-desc">(Qualified)</text>
+  </g>
+  
+  <!-- Limited support -->
+  <g transform="translate(352, 40)">
+    <rect x="0" y="0" width="148" height="80" fill="rgba(255,143,0,0.06)" stroke="#FF8F00" stroke-width="1.2" rx="4"/>
+    <text x="74" y="22" text-anchor="middle" class="evidence-grade" fill="#FF8F00">LR 1 – 10</text>
+    <text x="74" y="40" text-anchor="middle" class="grade-desc">Limited support</text>
+    <text x="74" y="56" text-anchor="middle" class="grade-desc">(Weak evidence)</text>
+    <text x="74" y="72" text-anchor="middle" class="grade-desc">Inconclusive</text>
+  </g>
+  
+  <!-- Support for opposite -->
+  <g transform="translate(520, 40)">
+    <rect x="0" y="0" width="160" height="80" fill="rgba(211,47,47,0.06)" stroke="#D32F2F" stroke-width="1.2" rx="4"/>
+    <text x="80" y="22" text-anchor="middle" class="evidence-grade" fill="#D32F2F">LR &lt; 1</text>
+    <text x="80" y="40" text-anchor="middle" class="grade-desc">Support for different</text>
+    <text x="80" y="56" text-anchor="middle" class="grade-desc">source hypothesis</text>
+    <text x="80" y="72" text-anchor="middle" class="grade-desc">(Rejection)</text>
+  </g>
+</g>
+
 </svg>

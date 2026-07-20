@@ -1,39 +1,170 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650" width="800" height="650" role="img" aria-label="Six-Layer Architecture Diagram">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1020" width="100%" height="100%" role="img" aria-label="AnubisX Framework Six-Layer Architecture">
 <defs>
-<marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#00d4ff"/></marker>
-<style>.label{font-family:Arial,Helvetica,sans-serif;font-size:14px;fill:#fffff8}.title{font-family:Arial,Helvetica,sans-serif;font-size:12px;fill:#d4af37;font-weight:600}.desc{font-family:Arial,Helvetica,sans-serif;font-size:11px;fill:#888}</style>
+  <marker id="arrow-down" markerWidth="7" markerHeight="7" refX="3.5" refY="7" orient="auto">
+    <path d="M0,0 L3.5,7 L7,0" fill="#666" stroke="none"/>
+  </marker>
+  <marker id="arrow-down-gold" markerWidth="7" markerHeight="7" refX="3.5" refY="7" orient="auto">
+    <path d="M0,0 L3.5,7 L7,0" fill="#D4AF37" stroke="none"/>
+  </marker>
+  <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/>
+  </filter>
+  <filter id="shadow-gold" x="-2%" y="-2%" width="104%" height="104%">
+    <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#D4AF37" flood-opacity="0.10"/>
+  </filter>
+  <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="var(--bg-top, #0D0D14)"/>
+    <stop offset="100%" stop-color="var(--bg-bottom, #0A0A0F)"/>
+  </linearGradient>
+  <style>
+    .frame { fill: none; stroke: #333; stroke-width: 1; rx: 6; }
+    .frame-dashed { fill: none; stroke: #D4AF37; stroke-width: 1.5; stroke-dasharray: 6,4; rx: 6; }
+    .title { font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 700; fill: #D4AF37; }
+    .subtitle { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; fill: #999; }
+    .section-label { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #666; letter-spacing: 1.5px; text-transform: uppercase; }
+    .layer-num { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #fff; }
+    .layer-name { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 600; fill: #E8E8F0; }
+    .layer-desc { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; fill: #999; }
+    .io-text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 600; fill: #777; }
+    .io-label { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 9px; fill: #888; }
+    .input-title { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; fill: #CCC; }
+    .input-desc { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 10px; fill: #888; }
+    .core-tag { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #D4AF37; letter-spacing: 2px; }
+    @media (prefers-color-scheme: light) {
+      .frame { stroke: #CCC; }
+      .layer-name { fill: #222; }
+      .layer-desc { fill: #666; }
+      .io-text { fill: #555; }
+      .io-label { fill: #777; }
+      .input-title { fill: #333; }
+      .input-desc { fill: #666; }
+      .section-label { fill: #999; }
+      .subtitle { fill: #666; }
+      .layer-num { fill: #fff; }
+    }
+  </style>
 </defs>
-<rect x="50" y="40" width="700" height="570" fill="none" stroke="#2c2c3a" stroke-width="1" rx="8"/>
-<text x="400" y="25" text-anchor="middle" class="label" font-size="18">AnubisX Framework: Six-Layer Architecture</text>
-<text x="400" y="60" text-anchor="middle" class="desc">Behavioral Digital Attribution Processing Pipeline</text>
-<g id="external-inputs">
-<rect x="60" y="80" width="120" height="50" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1" rx="4"/><text x="120" y="105" text-anchor="middle" class="title">Input Artifacts</text><text x="120" y="120" text-anchor="middle" class="desc">Raw Digital Data</text>
+
+<!-- Background -->
+<rect width="900" height="1020" fill="url(#bg-grad)" rx="8"/>
+
+<!-- Title -->
+<text x="450" y="42" text-anchor="middle" class="title">AnubisX Framework: Six-Layer Architecture</text>
+<text x="450" y="64" text-anchor="middle" class="subtitle">Behavioral Digital Attribution Processing Pipeline</text>
+
+<!-- Framework Boundary -->
+<rect x="30" y="85" width="840" height="900" class="frame"/>
+
+<!-- Section: External Inputs -->
+<text x="45" y="108" class="section-label">External Inputs</text>
+<rect x="280" y="115" width="340" height="54" fill="rgba(21,101,192,0.08)" stroke="#1565C0" stroke-width="1.5" rx="4" filter="url(#shadow)"/>
+<text x="450" y="138" text-anchor="middle" class="input-title">Digital Artifacts</text>
+<text x="450" y="156" text-anchor="middle" class="input-desc">Text · Metadata · Behavioral Traces · Platform Signals</text>
+
+<!-- Arrow: Input → Core Engine -->
+<line x1="450" y1="169" x2="450" y2="195" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-down)"/>
+
+<!-- Core Engine -->
+<rect x="50" y="203" width="800" height="710" class="frame-dashed" filter="url(#shadow-gold)"/>
+<rect x="50" y="203" width="800" height="28" fill="rgba(212,175,55,0.06)" rx="6"/>
+<text x="450" y="221" text-anchor="middle" class="core-tag">Core Engine — Attribution Pipeline</text>
+
+<!-- Layer 1: Data Acquisition -->
+<g transform="translate(0,0)">
+  <rect x="72" y="245" width="756" height="88" fill="rgba(21,101,192,0.06)" stroke="#1565C0" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="72" y="245" width="48" height="88" fill="#1565C0" rx="4"/>
+  <text x="96" y="280" text-anchor="middle" class="layer-num">1</text>
+  <text x="135" y="272" class="layer-name">Data Acquisition</text>
+  <text x="135" y="290" class="layer-desc">Ingestion and validation of raw digital artifacts from heterogeneous sources</text>
+  <line x1="135" y1="300" x2="808" y2="300" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="145" y="318" class="io-text">Input:</text><text x="182" y="318" class="io-label">Digital Artifacts</text>
+  <text x="390" y="318" class="io-text">Output:</text><text x="432" y="318" class="io-label">Validated Dataset</text>
+  <!-- Right-side metadata -->
+  <text x="700" y="272" class="io-label" fill="#1565C0">L1</text>
+  <text x="700" y="290" class="io-label">Status: Implemented</text>
 </g>
-<g id="layer1">
-<rect x="60" y="150" width="700" height="70" fill="#0f0f1a" stroke="#d4af37" stroke-width="2" rx="4"/><text x="70" y="172" class="title">Layer 1 — Data</text><text x="70" y="187" class="label">Ingestion & Validation</text><text x="70" y="202" class="desc">Raw data acquisition • Platform adapters • Data validation</text>
-<polygon points="130,130 140,140 130,150" fill="#00d4ff" marker-end="url(#arrow)"/>
+<line x1="450" y1="333" x2="450" y2="353" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-down)"/>
+
+<!-- Layer 2: Data Normalization -->
+<g transform="translate(0,0)">
+  <rect x="72" y="361" width="756" height="88" fill="rgba(123,31,162,0.06)" stroke="#7B1FA2" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="72" y="361" width="48" height="88" fill="#7B1FA2" rx="4"/>
+  <text x="96" y="396" text-anchor="middle" class="layer-num">2</text>
+  <text x="135" y="388" class="layer-name">Data Normalization</text>
+  <text x="135" y="406" class="layer-desc">Cleaning, standardization, and temporal alignment of multi-source acquired data</text>
+  <line x1="135" y1="416" x2="808" y2="416" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="145" y="434" class="io-text">Input:</text><text x="182" y="434" class="io-label">Validated Dataset</text>
+  <text x="390" y="434" class="io-text">Output:</text><text x="432" y="434" class="io-label">Normalized Vectors</text>
+  <text x="700" y="388" class="io-label" fill="#7B1FA2">L2</text>
+  <text x="700" y="406" class="io-label">Status: Implemented</text>
 </g>
-<g id="layer2">
-<rect x="60" y="240" width="700" height="70" fill="#0f0f1a" stroke="#d4af37" stroke-width="2" rx="4"/><text x="70" y="262" class="title">Layer 2 — Feature</text><text x="70" y="277" class="label">Feature Extraction</text><text x="70" y="292" class="desc">Modality-specific features • Lexical • Semantic • Temporal</text>
-<polygon points="130,220 140,230 130,240" fill="#00d4ff" marker-end="url(#arrow)"/>
+<line x1="450" y1="449" x2="450" y2="469" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-down)"/>
+
+<!-- Layer 3: Feature Extraction -->
+<g transform="translate(0,0)">
+  <rect x="72" y="477" width="756" height="88" fill="rgba(0,188,212,0.06)" stroke="#00BCD4" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="72" y="477" width="48" height="88" fill="#00BCD4" rx="4"/>
+  <text x="96" y="512" text-anchor="middle" class="layer-num">3</text>
+  <text x="135" y="504" class="layer-name">Feature Extraction</text>
+  <text x="135" y="522" class="layer-desc">Modality-specific feature computation across lexical, semantic, and temporal domains</text>
+  <line x1="135" y1="532" x2="808" y2="532" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="145" y="550" class="io-text">Input:</text><text x="182" y="550" class="io-label">Normalized Vectors</text>
+  <text x="390" y="550" class="io-text">Output:</text><text x="432" y="550" class="io-label">Feature Vectors</text>
+  <text x="700" y="504" class="io-label" fill="#00BCD4">L3</text>
+  <text x="700" y="522" class="io-label">Status: Implemented</text>
 </g>
-<g id="layer3">
-<rect x="60" y="330" width="700" height="70" fill="#0f0f1a" stroke="#d4af37" stroke-width="2" rx="4"/><text x="70" y="352" class="title">Layer 3 — Profile</text><text x="70" y="367" class="label">Profile Construction</text><text x="70" y="382" class="desc">Fingerprint generation • Quality assessment • Storage</text>
-<polygon points="130,310 140,320 130,330" fill="#00d4ff" marker-end="url(#arrow)"/>
+<line x1="450" y1="565" x2="450" y2="585" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-down)"/>
+
+<!-- Layer 4: Behavioral Profiling -->
+<g transform="translate(0,0)">
+  <rect x="72" y="593" width="756" height="88" fill="rgba(212,175,55,0.06)" stroke="#D4AF37" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="72" y="593" width="48" height="88" fill="#D4AF37" rx="4"/>
+  <text x="96" y="628" text-anchor="middle" class="layer-num" fill="#1a1a2e">4</text>
+  <text x="135" y="620" class="layer-name">Behavioral Profiling</text>
+  <text x="135" y="638" class="layer-desc">Fingerprint generation, behavioral profile construction, and quality assessment</text>
+  <line x1="135" y1="648" x2="808" y2="648" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="145" y="666" class="io-text">Input:</text><text x="182" y="666" class="io-label">Feature Vectors</text>
+  <text x="390" y="666" class="io-text">Output:</text><text x="432" y="666" class="io-label">Behavioral Profiles</text>
+  <text x="700" y="620" class="io-label" fill="#D4AF37">L4</text>
+  <text x="700" y="638" class="io-label">Status: Implemented</text>
 </g>
-<g id="layer4">
-<rect x="60" y="420" width="700" height="70" fill="#0f0f1a" stroke="#d4af37" stroke-width="2" rx="4"/><text x="70" y="442" class="title">Layer 4 — Comparison</text><text x="70" y="457" class="label">Similarity Computation</text><text x="70" y="472" class="desc">Distance metrics • Cosine similarity • FAISS search</text>
-<polygon points="130,400 140,410 130,420" fill="#00d4ff" marker-end="url(#arrow)"/>
+<line x1="450" y1="681" x2="450" y2="701" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-down)"/>
+
+<!-- Layer 5: Similarity & Attribution -->
+<g transform="translate(0,0)">
+  <rect x="72" y="709" width="756" height="88" fill="rgba(255,143,0,0.06)" stroke="#FF8F00" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="72" y="709" width="48" height="88" fill="#FF8F00" rx="4"/>
+  <text x="96" y="744" text-anchor="middle" class="layer-num">5</text>
+  <text x="135" y="736" class="layer-name">Similarity &amp; Attribution</text>
+  <text x="135" y="754" class="layer-desc">Distance computation, similarity search, and candidate identification</text>
+  <line x1="135" y1="764" x2="808" y2="764" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="145" y="782" class="io-text">Input:</text><text x="182" y="782" class="io-label">Behavioral Profiles</text>
+  <text x="390" y="782" class="io-text">Output:</text><text x="432" y="782" class="io-label">Similarity Scores</text>
+  <text x="700" y="736" class="io-label" fill="#FF8F00">L5</text>
+  <text x="700" y="754" class="io-label">Status: Proposed</text>
 </g>
-<g id="layer5">
-<rect x="60" y="510" width="700" height="70" fill="#0f0f1a" stroke="#d4af37" stroke-width="2" rx="4"/><text x="70" y="532" class="title">Layer 5 — Evidence</text><text x="70" y="547" class="label">Evidence Evaluation</text><text x="70" y="562" class="desc">Likelihood ratio • Score calibration • Evidence fusion</text>
-<polygon points="130,490 140,500 130,510" fill="#00d4ff" marker-end="url(#arrow)"/>
+<line x1="450" y1="797" x2="450" y2="817" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-down)"/>
+
+<!-- Layer 6: Evidence Generation -->
+<g transform="translate(0,0)">
+  <rect x="72" y="825" width="756" height="88" fill="rgba(46,125,50,0.06)" stroke="#2E7D32" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="72" y="825" width="48" height="88" fill="#2E7D32" rx="4"/>
+  <text x="96" y="860" text-anchor="middle" class="layer-num">6</text>
+  <text x="135" y="852" class="layer-name">Evidence Generation</text>
+  <text x="135" y="870" class="layer-desc">Likelihood ratio calculation, score calibration, and decision fusion</text>
+  <line x1="135" y1="880" x2="808" y2="880" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="145" y="898" class="io-text">Input:</text><text x="182" y="898" class="io-label">Similarity Scores</text>
+  <text x="390" y="898" class="io-text">Output:</text><text x="432" y="898" class="io-label">Attribution Report</text>
+  <text x="700" y="852" class="io-label" fill="#2E7D32">L6</text>
+  <text x="700" y="870" class="io-label">Status: Proposed</text>
 </g>
-<g id="layer6">
-<rect x="60" y="590" width="700" height="70" fill="#0f0f1a" stroke="#d4af37" stroke-width="2" rx="4"/><text x="70" y="612" class="title">Layer 6 — Decision</text><text x="70" y="627" class="label">Identity Decision</text><text x="70" y="642" class="desc">Threshold-based classification • Confidence quantification • Reporting</text>
-<polygon points="130,570 140,580 130,590" fill="#00d4ff" marker-end="url(#arrow)"/>
-</g>
-<g id="output">
-<rect x="60" y="640" width="120" height="50" fill="#1a1a2e" stroke="#50c878" stroke-width="1" rx="4"/><text x="120" y="665" text-anchor="middle" class="title">Output Decision</text><text x="120" y="680" text-anchor="middle" class="desc">Attribution Result</text>
-</g>
+
+<!-- Arrow: Layer 6 → Output -->
+<line x1="450" y1="913" x2="450" y2="940" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arrow-down-gold)"/>
+
+<!-- Section: Output -->
+<rect x="280" y="948" width="340" height="54" fill="rgba(46,125,50,0.08)" stroke="#2E7D32" stroke-width="1.5" rx="4" filter="url(#shadow)"/>
+<text x="450" y="969" text-anchor="middle" class="input-title" fill="#2E7D32">Attribution Decision</text>
+<text x="450" y="989" text-anchor="middle" class="input-desc">Confidence Score · Evidence Report · Classification Result</text>
+
 </svg>

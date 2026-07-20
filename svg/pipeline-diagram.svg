@@ -1,20 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200" role="img" aria-label="Six-Stage Pipeline">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="100%" height="100%" role="img" aria-label="AnubisX Attribution Pipeline">
 <defs>
-<marker id="flow-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,8 L8,4 z" fill="#00d4ff"/></marker>
-<style>.label{font-family:Arial,Helvetica,sans-serif;font-size:13px;fill:#fffff8}.status{font-family:Arial,Helvetica,sans-serif;font-size:11px;fill:#888}</style>
+  <marker id="arrow-right" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+    <path d="M0,0 L6,3 L0,6" fill="#999" stroke="none"/>
+  </marker>
+  <filter id="shadow" x="-2%" y="-2%" width="104%" height="104%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/>
+  </filter>
+  <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="var(--bg-top, #0D0D14)"/>
+    <stop offset="100%" stop-color="var(--bg-bottom, #0A0A0F)"/>
+  </linearGradient>
+  <style>
+    .title { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; font-weight: 700; fill: #D4AF37; }
+    .subtitle { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; fill: #999; }
+    .stage-num { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #fff; }
+    .stage-name { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; fill: #E8E8F0; }
+    .stage-desc { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 9px; fill: #999; }
+    .impl-tag { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 8px; font-weight: 600; fill: #4CAF50; }
+    .prop-tag { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 8px; font-weight: 600; fill: #FF8F00; }
+    @media (prefers-color-scheme: light) {
+      .stage-name { fill: #222; }
+      .stage-desc { fill: #666; }
+      .subtitle { fill: #666; }
+    }
+  </style>
 </defs>
-<text x="450" y="20" text-anchor="middle" class="label" font-size="16">Attribution Pipeline Stages</text>
-<g id="stages">
-<rect x="20" y="40" width="130" height="60" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1" rx="4"/><text x="85" y="62" text-anchor="middle" class="label">1. Ingestion</text><text x="85" y="78" text-anchor="middle" class="status">Raw data acquisition</text>
-<polygon points="150,70 160,70 160,80 150,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
-<rect x="180" y="40" width="130" height="60" fill="#1a1a2e" stroke="#00d4ff" stroke-width="1" rx="4"/><text x="245" y="62" text-anchor="middle" class="label">2. Extraction</text><text x="245" y="78" text-anchor="middle" class="status">Feature computation</text>
-<polygon points="310,70 320,70 320,80 310,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
-<rect x="340" y="40" width="130" height="60" fill="#1a1a2e" stroke="#d4af37" stroke-width="1" rx="4"/><text x="405" y="62" text-anchor="middle" class="label">3. Construction</text><text x="405" y="78" text-anchor="middle" class="status">Profile generation</text>
-<polygon points="470,70 480,70 480,80 470,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
-<rect x="500" y="40" width="130" height="60" fill="#1a1a2e" stroke="#d4af37" stroke-width="1" rx="4"/><text x="565" y="62" text-anchor="middle" class="label">4. Comparison</text><text x="565" y="78" text-anchor="middle" class="status">Similarity search</text>
-<polygon points="630,70 640,70 640,80 630,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
-<rect x="660" y="40" width="110" height="60" fill="#0f0f1a" stroke="#ffbf00" stroke-width="1" stroke-dasharray="4,2" rx="4"/><text x="715" y="62" text-anchor="middle" class="label">5. Evidence</text><text x="715" y="78" text-anchor="middle" class="status">LR computation</text>
-<polygon points="770,70 780,70 780,80 770,80" fill="#00d4ff" marker-end="url(#flow-arrow)"/>
-<rect x="790" y="40" width="110" height="60" fill="#0f0f1a" stroke="#ffbf00" stroke-width="1" stroke-dasharray="4,2" rx="4"/><text x="845" y="62" text-anchor="middle" class="label">6. Decision</text><text x="845" y="78" text-anchor="middle" class="status">Classification</text>
+
+<!-- Background -->
+<rect width="960" height="320" fill="url(#bg-grad)" rx="6"/>
+
+<!-- Title -->
+<text x="480" y="32" text-anchor="middle" class="title">Attribution Pipeline Stages</text>
+<text x="480" y="52" text-anchor="middle" class="subtitle">End-to-End Processing Flow from Ingestion to Decision</text>
+
+<!-- Stage 1: Ingestion -->
+<g transform="translate(0,0)">
+  <rect x="18" y="80" width="128" height="100" fill="rgba(21,101,192,0.06)" stroke="#1565C0" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="18" y="80" width="128" height="4" fill="#1565C0" rx="2"/>
+  <circle cx="35" cy="100" r="10" fill="#1565C0"/>
+  <text x="35" y="104" text-anchor="middle" class="stage-num">1</text>
+  <text x="82" y="104" text-anchor="middle" class="stage-name">Ingestion</text>
+  <text x="82" y="122" text-anchor="middle" class="stage-desc">Raw data acquisition</text>
+  <text x="82" y="138" text-anchor="middle" class="stage-desc">through platform-specific</text>
+  <text x="82" y="152" text-anchor="middle" class="stage-desc">adapters and validation</text>
+  <text x="82" y="172" text-anchor="middle" class="impl-tag">IMPLEMENTED</text>
 </g>
+<line x1="146" y1="130" x2="165" y2="130" stroke="#999" stroke-width="1.2" marker-end="url(#arrow-right)"/>
+
+<!-- Stage 2: Feature Extraction -->
+<g transform="translate(0,0)">
+  <rect x="170" y="80" width="128" height="100" fill="rgba(123,31,162,0.06)" stroke="#7B1FA2" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="170" y="80" width="128" height="4" fill="#7B1FA2" rx="2"/>
+  <circle cx="187" cy="100" r="10" fill="#7B1FA2"/>
+  <text x="187" y="104" text-anchor="middle" class="stage-num">2</text>
+  <text x="234" y="104" text-anchor="middle" class="stage-name">Feature Extraction</text>
+  <text x="234" y="122" text-anchor="middle" class="stage-desc">Modality-specific</text>
+  <text x="234" y="138" text-anchor="middle" class="stage-desc">feature computation</text>
+  <text x="234" y="152" text-anchor="middle" class="stage-desc">with normalization</text>
+  <text x="234" y="172" text-anchor="middle" class="impl-tag">IMPLEMENTED</text>
+</g>
+<line x1="298" y1="130" x2="317" y2="130" stroke="#999" stroke-width="1.2" marker-end="url(#arrow-right)"/>
+
+<!-- Stage 3: Profile Construction -->
+<g transform="translate(0,0)">
+  <rect x="322" y="80" width="128" height="100" fill="rgba(0,188,212,0.06)" stroke="#00BCD4" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="322" y="80" width="128" height="4" fill="#00BCD4" rx="2"/>
+  <circle cx="339" cy="100" r="10" fill="#00BCD4"/>
+  <text x="339" y="104" text-anchor="middle" class="stage-num">3</text>
+  <text x="386" y="104" text-anchor="middle" class="stage-name">Profile Construction</text>
+  <text x="386" y="122" text-anchor="middle" class="stage-desc">Fingerprint generation</text>
+  <text x="386" y="138" text-anchor="middle" class="stage-desc">with quality assessment</text>
+  <text x="386" y="152" text-anchor="middle" class="stage-desc">and profile storage</text>
+  <text x="386" y="172" text-anchor="middle" class="impl-tag">IMPLEMENTED</text>
+</g>
+<line x1="450" y1="130" x2="469" y2="130" stroke="#999" stroke-width="1.2" marker-end="url(#arrow-right)"/>
+
+<!-- Stage 4: Comparison -->
+<g transform="translate(0,0)">
+  <rect x="474" y="80" width="128" height="100" fill="rgba(212,175,55,0.06)" stroke="#D4AF37" stroke-width="1.2" rx="4" filter="url(#shadow)"/>
+  <rect x="474" y="80" width="128" height="4" fill="#D4AF37" rx="2"/>
+  <circle cx="491" cy="100" r="10" fill="#D4AF37"/>
+  <text x="491" y="104" text-anchor="middle" class="stage-num" fill="#1a1a2e">4</text>
+  <text x="538" y="104" text-anchor="middle" class="stage-name">Comparison</text>
+  <text x="538" y="122" text-anchor="middle" class="stage-desc">Similarity computation</text>
+  <text x="538" y="138" text-anchor="middle" class="stage-desc">using configured metrics</text>
+  <text x="538" y="152" text-anchor="middle" class="stage-desc">and FAISS search</text>
+  <text x="538" y="172" text-anchor="middle" class="impl-tag">IMPLEMENTED</text>
+</g>
+<line x1="602" y1="130" x2="621" y2="130" stroke="#999" stroke-width="1.2" marker-end="url(#arrow-right)"/>
+
+<!-- Stage 5: Evidence -->
+<g transform="translate(0,0)">
+  <rect x="626" y="80" width="128" height="100" fill="rgba(255,143,0,0.06)" stroke="#FF8F00" stroke-width="1.2" stroke-dasharray="4,2" rx="4" filter="url(#shadow)"/>
+  <rect x="626" y="80" width="128" height="4" fill="#FF8F00" rx="2"/>
+  <circle cx="643" cy="100" r="10" fill="#FF8F00"/>
+  <text x="643" y="104" text-anchor="middle" class="stage-num">5</text>
+  <text x="690" y="104" text-anchor="middle" class="stage-name">Evidence</text>
+  <text x="690" y="122" text-anchor="middle" class="stage-desc">Score calibration</text>
+  <text x="690" y="138" text-anchor="middle" class="stage-desc">and likelihood ratio</text>
+  <text x="690" y="152" text-anchor="middle" class="stage-desc">computation</text>
+  <text x="690" y="172" text-anchor="middle" class="prop-tag">PROPOSED</text>
+</g>
+<line x1="754" y1="130" x2="773" y2="130" stroke="#999" stroke-width="1.2" marker-end="url(#arrow-right)"/>
+
+<!-- Stage 6: Decision -->
+<g transform="translate(0,0)">
+  <rect x="778" y="80" width="128" height="100" fill="rgba(46,125,50,0.06)" stroke="#2E7D32" stroke-width="1.2" stroke-dasharray="4,2" rx="4" filter="url(#shadow)"/>
+  <rect x="778" y="80" width="128" height="4" fill="#2E7D32" rx="2"/>
+  <circle cx="795" cy="100" r="10" fill="#2E7D32"/>
+  <text x="795" y="104" text-anchor="middle" class="stage-num">6</text>
+  <text x="842" y="104" text-anchor="middle" class="stage-name">Decision</text>
+  <text x="842" y="122" text-anchor="middle" class="stage-desc">Threshold-based</text>
+  <text x="842" y="138" text-anchor="middle" class="stage-desc">classification with</text>
+  <text x="842" y="152" text-anchor="middle" class="stage-desc">confidence quantification</text>
+  <text x="842" y="172" text-anchor="middle" class="prop-tag">PROPOSED</text>
+</g>
+
+<!-- Legend -->
+<line x1="300" y1="220" x2="360" y2="220" stroke="#999" stroke-width="1.2"/>
+<rect x="300" y="235" width="8" height="8" fill="#4CAF50"/>
+<rect x="380" y="235" width="8" height="8" fill="#FF8F00"/>
+<text x="370" y="218" class="stage-desc">Flow direction</text>
+<text x="312" y="242" class="stage-desc">Implemented</text>
+<text x="392" y="242" class="stage-desc">Proposed</text>
+
+<!-- Pipeline note -->
+<text x="480" y="280" text-anchor="middle" class="stage-desc">Stages 1–4 implemented in prototype (Anubis Twitter v2.5). Stages 5–6 are proposed for future work.</text>
+
+<!-- Input label -->
+<text x="18" y="72" class="stage-desc" fill="#1565C0">Input</text>
+<!-- Output label -->
+<text x="800" y="195" class="stage-desc" fill="#2E7D32">Output → Attribution</text>
+
 </svg>
