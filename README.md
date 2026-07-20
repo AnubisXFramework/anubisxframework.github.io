@@ -46,4 +46,5 @@ Anubis Twitter v2.5 — stylometric modality for Arabic Twitter data. 47 Python 
 - Zenodo: https://zenodo.org/doi/10.5281/zenodo.21393392
 - Website: https://anubisxframework.github.io
 - Mirror: https://anubisxframework.nullc0d3.workers.dev
+- Email: anubisxframework@gmail.com
 
