@@ -3,7 +3,7 @@
 A Formal Framework for Behavioral Digital Attribution
 
 **Version:** 3.0.0 — Scientific Re-Architecture  
-**Author:** Ahmed Awad  
+**Author:** Ahmed Awad (NullC0d3)
 **ORCID:** https://orcid.org/0009-0005-0654-3393  
 **DOI:** 10.5281/zenodo.21393392  
 **License:** CC BY 4.0
